@@ -1,0 +1,13 @@
+Tools
+
+ - Nessus
+ 	Industry Standard Vulnerability Scanner by Tenable
+ 	
+ - Nexpose
+ 	Vulnerability Scanner by Rapid7
+
+ - Open VNC on remote computer
+ 
+ - Shodan
+ 	IOT search engine
+ 	

@@ -1,0 +1,10 @@
+Linux-Commandline
+
+- Make a directory
+	mkdir <directory>
+
+- Make a bash script
+	touch <filename>.sh
+
+- Make a file executable
+	chmod +x <file>

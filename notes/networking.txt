@@ -1,0 +1,66 @@
+Networking
+
+- Find my public IP address
+	curl https://ifconfig.me/
+
+- Private IP Address Ranges
+    Class A: 10.0.0.0 to 10.255.255.255.
+    Class B: 172.16.0.0 to 172.31.255.255.
+    Class C: 192.168.0.0 to 192.168.255.255.
+
+- Ports and services
+	21 - FTP (File Transfer Protocol) - insecure
+	22 - SSH (Secure Shell) - secure
+	23 - Telnet - insecure
+	25 - SMTP (Simple Mail Transfer Protocol)
+	43 - Whois
+	53 - DNS - UDP, Domain Transfers TCP
+	80 - HTTP
+	88 - Kerberos
+	110 - POP3 (Email receiving protocol)
+	111 - Sunrpc (SUN Remote Procedure Call)
+	123 - NTP (Network Time Protocol)
+	143 - IMAP (Internet Message Access Protocol)
+	161 - SNMP (Simple Network Management Protocol) - UDP
+	389 - LDAP (Lightweight Directory Access Protocol) - Used for Active Directory, Unencrypted
+	443 - HTTPS
+	445 - SMB (Service Message Block) - Windows file sharing
+	465 - Secure SMTP (Simple Mail Transfer Protocol) (See 25)
+	587 - Secure SMTP (Simple Mail Transfer Protocol) (See 25)
+	636 - LDAPS (Lightweight Directory Access Protocol Secure) - Used for Active Directory, Encrypted
+	993 - Secure IMAP (Internet Message Access Protocol) (See 143)
+	995 - Secure POP3 (see 110)
+	1433 - MS-SQL database
+	1521 - Oracle database
+	3306 - MySQL database
+	3389 - RDP (Remote Desktop Protocol) - Used to remotely access Windows
+	4444 - Metasploit default backdoor
+	5432 - PostgreSQL database
+	5900 - VNC (Virtual Network Computing) - Used to remotely view a Windows computer
+	6000-6010 - X11 - Used to remotely view a Linux computer (usually has no authentication)
+	8000 - HTTP alternate
+	8080 - HTTP alternate
+	8081 - HTTP alternate
+	8443 - HTTPS alternate
+	
+- Nmap
+	-Pn - Do not ping
+	-n - Do not resolve DNS
+	-T# (Goes from 0 to 5, 0 is paranoid, 3 is normal, 4 is aggressive, 5 is insane) - Determines speed of sweep
+	--open - Show only open ports
+	-p# - Port number - (-p80-100 scans from 80 to 100) (-p80,443 scans 80 and 443)
+	-p- - Scan all ports (0-65535)
+	-sV - Service version detection
+	-sU - UDP scan
+	-iL - Feed in a list of targets (one IP per line or range of IPs)  ex. nmap -iL <file> 223.103.0.0/16, 10.0.0.10-20
+	-oA - Output all formats (text, nmap, greppable, xml)
+		ex. Find all domain controllers: nmap -iL targets.txt -Pn -n -T4 --open -p389,636 -sV -oA dc
+		ex. Find all webservers: nmap -iL targets.txt -Pn -n -T4 --open -p80,443,8000,8080,8081,8443 -sV -oA webservers
+		ex. Find all Linux hosts: nmap -iL targets.txt -Pn -n -T4 --open -p22,111 -oA linux
+		ex. Find all Windows hosts: nmap -iL targets.txt -Pn -n -T4 --open -p445,3389 -oA windows
+		ex. Find all databases: nmap -iL targets.txt -Pn -n -T4 --open -p1433,1521,3306,5432 -oA databases
+		ex. Find all SNMP: nmap -iL targets.txt -Pn -n -T4 --open -sU -p161 -oA snmp
+	
+	
+	
+	
