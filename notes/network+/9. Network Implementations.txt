@@ -1,0 +1,95 @@
+Network Implementations
+
+- Ethernet Network Switches
+	Physical connection, point-to-point communication
+	Data-link layer
+	
+	Layer 3 switches also exist at network layer, can use IPs, higher port density, (technically also a router)
+
+- Ethernet Network Routers
+	Network layer
+	Connect networks including internet
+	
+- Hubs and Bridges
+	Hubs are like switches but no addressing - anything in goes out in every direction
+	Active hubs boost signals, passive do not
+	
+	Bridges decide whether to forward from one side to the other or not
+	No specific 1-to-1 traffic, but doesn't broadcast to anyone - just everyone in one direction
+
+- Other devices
+	Access points - data link layer, literally just give you acces to a network
+	Load Balancer - divides up requests to different pieces of the network to avoid overload on any one system
+	Voice Gateways - Connects network with telecommunications network - degraded. A repeater just amplifies a signal
+
+- Firewall devices
+	Examines packets as they arrive and allows them through or denies them according to rules
+	Can be a piece of hardware or a software application
+	
+	Stateful can examie after the fact, stateless cannot
+
+- Intrusion Detection System (IDS)
+	Monitors for malicious activity, collects data, and reports
+	
+	NIDS
+		Network IDS - Installed at edge of network
+	HIDS
+		Host IDS - Software on client
+
+- Network Service Devices
+	Printers, eg.
+	Networked security cameras
+	Networked Physical Access Controls
+	Heating, Ventilation, and Air Conditioning Sensors (HVAC)
+	
+- Voice over Internet Protocol
+	Just making voice-based calls using IP
+	Information compressed to reduce traffic
+	
+	Can be done either locally by sending out from devices to provider, or use Session Initiation Protocol on a server to act as a switch
+
+- Internet of Things
+	Collection of devices which communicate over the internet protocol
+
+- Supervisory Control and Data Acquisition
+	Collecting and analyzing data real-time
+	Good for monitoring
+	Master Terminal Unit, Remote Terminal Unit, Human Machine Interface
+
+- Common Routing Protocols
+	Spcifically how routers communicate
+	
+	Routing Information Protocol (RIP)
+		LANs, WANs, Application Layer
+		Informs other router by sending entire routing table
+	
+	Open Shortest Path First (OSPF)
+		Routers use Link State Advertisements, monitors topology
+		Takes into account amount of existing traffic
+		
+	Enhanced Interior Gateway Protocol (EIGRP)
+		Only inside a network
+		RTP and DUAL
+	
+- Link-state vs Distance-Vector
+	Distance-vector only takes into account the number of hops
+	Link State uses SPF alg, takes congestion into account - more difficult to implement/maintain
+	Hybrid routing falls in between the two
+
+- Static and Default Routes
+	Static - created manually
+		Less processing and resource requirements
+	Default Routing - uses default paths
+		Only in stub networks
+	
+	Interior
+		Within a system
+		RIP, IGRP, OSPF
+	Exterior
+		Between Autonomous systems
+		Exchange routing table info
+		BGP
+
+- Bandwidth Management
+	Quality of Service
+	Traffic Shaping

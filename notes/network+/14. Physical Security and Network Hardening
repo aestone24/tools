@@ -1,0 +1,148 @@
+Phys Sec and Net Hardening
+
+- Network Hardening
+	Disabling features that aren't needed, restricting others to just what you need from them
+	Disable access to unused physical ports
+
+- Password Strength
+	Avoid personal information
+	Avoid easily recognizable numbers
+	Avoid real words
+	Never write it down in an accessible place
+	Use longer passwords or pass phrases
+	Update passwords regularly
+	Use different passwords for different services
+	Disable non-active accounts
+
+- Disabling unused ports
+	Can use a firewall
+		Can manage inbound/outbound separately
+
+- Firewall Rules
+	Allow, Deny, Bypass, Force Allow, and Log Only
+	Examined: Port, Source, Destination, Protocol
+	Default is deny
+
+- Wireless Security
+	Wep (bad) < WPA < WPA2
+
+- TKIP-RC4 and AES-CCMP
+	TKIP provides more secure transmission for WEP
+	Legacy hardware can use this to upgrade
+	Issue? Same key for all packets - could be cracked with enough data
+	
+	TKIP RC4 fixed the problem with four new algorithms, including changing the key every 10,000 packets
+	
+	AES-CCMP is the encryption standard used for government, requires newer hardware
+
+- Wireless Authenticaion and Authorization
+	EAP handls and defines authentication requests
+	PEAP - used in wireless and point-to-point for 802.1x
+	EAP-FAST
+	Pre-shared key
+	MAC Address Filtering
+	
+- Geofencing
+	Defines geographical boudaries and uses GPS, RFID, Cellular, Wi-Fi to issue an alert when a device leaves those boundaries
+
+- Security Considerations
+	Don't have a network signal that's too strong/extends too far
+	Maybe isolate wireless clients
+	
+- IoT Security
+	More devices > more passwords > higher password security/insurance of no re-use necessary
+	More data will be in transit, must ensure its protection
+	Consider data segregation to this end
+
+- VPNs
+	Provides ability to access a public network in a private manner
+	Uses IPsec to secure network communication and make a tunnel (data now encrypted), which also has an authentication header
+	
+	Secure protocols also include
+		SSL
+		TLS - helps avoid tampering of packets
+		DTLS
+	
+	Host-to-site - One-way, getting onto a network
+	Host-to-host
+	Site-to-site - establish one connection via vpn concentrator at each location
+
+- Remote Desktop Protocol
+	Microsoft proprietary
+	Take full control of the machine with visuals
+	Uses encryption and smart card authentication, bandwidth reduction
+	
+	Remote Desktop Connections (above) and Remote Assistance (below)
+		Someone sitting at the computer needs help, basically used to walk someone through a problem
+		Think like your company's tech support - they can see your screen, tell you what to do, but can also seize control if need be
+	
+- Secure Shell
+	Gives secure access to a shell on another machine
+	Client is always the one sending the request, server is always the one receiving
+	
+	SSH utilities include Slogin, SSH, and SCP
+
+- Virtual Network Computing - VNC
+	Access a remote host
+	VNC is open source, and contains a server and a client component
+	Contains configuration option to only view but not take control
+	Can be installed on windows, macs, and linux
+	VNC, obviously, does not require a license, so it's much better for things like presentations
+
+- Remote Authentication and Authorization
+	Password Authentication Protocol
+		Sends passwords in plain text
+		Only used as a fallback now
+		
+	Challenge Handshake Authentication Protocol
+		Authenticator sends challenge
+		Password responds using a hash value calculated with MD5
+		If authenticator's calculated value matches, access is granted
+	
+	MS-CHAP/MS-CHAP2
+		Challenges posed in both directions with better hashing for authentication in both ways
+		Microsoft proprietary
+	
+	EAP/TLS
+		Smart ccards, Kerberos, digital certificates, etc.
+	
+	RADIUS
+		Centralized authentication database which supports
+			Dial-in
+			VPN
+			Wireless access points
+
+- Out-of-Band Management
+	Any way other than the normal way to do things (technically)
+	Separate dedicated channels for reduncency so that a network/service failure does not stop services
+
+- Video Surveillance
+	CCTV
+	Cameras
+
+- Asset Tracking/disposal
+	Inventory record details should include details on security, classification, possible damage if lost, and a plan to replace
+	Maintaining inventory is important - can be manual or automated, size of org may play a big impact there
+	
+	Hardware asset management
+		Mobile, desktop, laptop, server, router, switch, security, and any other necessary hardware
+	
+	Disposal
+		Donated or sold
+		DATA WIPING
+			Important to do this instead of 'deleting,' from which data can still be recovered
+		Consider demagnetizing if you really need to ensure it's never recovered
+
+- Tamper Detection
+	Alerts you if device is impaired
+	Blockage - limited or no visibility
+	Redirecting - turning the camera
+	Defocusing, maybe with a lens or beam
+
+- Prevention Techniques
+	Identity cards, especially with scanners
+	Biometrics
+	Smart cards (aka ICC)
+	Keypads - not as good as the other two
+	Physical locks
+	Education with respect to social engineering

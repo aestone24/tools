@@ -1,0 +1,204 @@
+Social Engineering Techniques and Other Attack Types
+
+- Phishing and its Variants
+	Goal is to trick a target that a message with an attachment is legitimate
+	Spearphishing - target a small number of people with specific access or vulnerability
+	Whaling - same as above, but usually a high level executive
+	Vishing - same, but over voice/phone systems
+	
+	Common indicators
+		Vague greetings
+		Suspicious domains/misspellings
+		URL Paths
+		Urgency in text
+		Lack of contact info
+		Spoofed headers/logos
+	
+	Business Email Compromise (BEC)
+		Attack targeting companies who outsource, conduct wire transfers, or have suppliers abroad
+		Corporate email accounts are spoofed or compromised to perform fraudulent transfers
+		
+		Phony invoices/transfers, C-Suite fraud (impersonating CEOs, etc.), email account compromise, attorney impersonation, or data theft of PII
+		
+	Pharming
+		Manipulate or spoof a web site's traffic to redirect traffic
+		Can be used in conjunction with DNS poisoning
+		Remember that this has to do with DNS
+
+- Spam Attacks
+	Often is just junk email, advertisements, or chain mail
+	Basically, unsolicited mail
+	Could include hoaxes, money scams, spoofed email related to phishing campaigns, etc.
+	
+	Includes
+		Email spam
+		Comment spam
+		Trackback spam
+		Search Engine Optimization attacks
+		Spiders and DDoS bots
+	
+	SPIM
+		Spam over instant messaging
+		Block people outside contact list to avoid this
+	
+	Typosquatting
+		Squatting domains (domains similar to big companies), usually to harvest information, frive by, or get someone to download something
+
+- Tailgating and Piggybacking
+	Following someone into a restricted area without using a card to validate
+	
+	Dumpster Diving
+		Attempting to find any valuable information in garbage bins or dumpsters
+	
+	Shoulder Surfing
+		Looking over someone's shoulder while they enter valuable information on their devices
+	
+	Watering Hole
+		Leverage a compromised webserver to target groups or associations
+		Does not touch other traffic from other people
+
+- Scams and Fraud
+	Impersonation is first attempted remotely with IP spoofing
+	Next verctors are phones, email, sms, IM
+	Next is masquerading as a legitimate entity
+	Goal is theft of financials, IP, PII, PHI
+	
+	Employees should be well trained through security awareness trainings
+
+- Influence Campaigns
+	Begin with gathering tactical information about adversary or competitor
+	Locate key influencers or stakeholders
+	Launch propaganda or disinformation initiative
+	Goal is to gain a competitive advantage or confuse the adversary
+
+- Principle Reasons for Effectiveness
+	Lack of security and awareness training - should be a continuous process
+	Inadequate acceptable use policies
+
+- Common Malware Attacks
+	PUP/PUA - Potentiall unwanted program/application
+	Ransomware - encrypt key filees and holds them for ransom, usually for cryptocurrency
+		Ransomware as a Service is now a thing
+		Installation, Contact, Handshake/keys, Encryption, Extortion (in that order)
+		Should you pay up? For the greater good, no, but sometimes you have to
+	
+	Trojans
+		No reproduction
+		Masquerading as legitimate programs
+			Games, utilities, tools, drivers, patches/updates, shareware, freeware, system upgrades
+		
+		Remote Access Trojans (RATs)
+			Create backdoors
+			Use C2 servers
+			Ghost, PlugX, Sakula, e.g.
+			Can exist on mobile devices now
+	
+	Worms
+		Self-replicating viruses that distribute copies of themselves on a network
+		Can also tunnel into a system to allow for remote control
+		Ex. Sasser, ILOVEYOU, Conflixer, Stuxnet
+	
+	Spyware
+		Gathers information about a user without permission
+		Can show malvertisements
+		Often accidentally downloadied on P2P, download sites, bit torrents
+		Your smart home devices can be used as spyware...
+	
+	Keyloggers
+		Malicious code that records keystrokes and sends data back to a C&C server
+		Can sometimes also be used to track employees
+		Keylogger detectors can be used
+		Ex. PAL KeyLogger Pro, KeyGhost
+
+- Complex Malware Types
+	Most malware attacks are multi-phased, stealthy, and polymorphic
+	Examples
+		Rootkits
+			Placed in unauthorized areas to access data, monitor actions, escalate privileges, Modify programs, and conduct further exploits
+		Backdoors
+			Typically trojan programs
+			Generates a covert channel to C2
+			Remote attacker controls systems
+			Can perform DOS on other systems
+		Fileless
+			Run only in memory
+			Not stored in a file or installed directly
+			Ex. Frodo, DarkAvenger
+		Botnets
+			Most common form of DDoS
+			Uses a zombie computer and a master C2 server to remotely control
+			Communication over IRC
+			Bots can exfil data, log keystrokes, mine crypto, etc.
+		Crypto
+			Advanced form of crypto, encrypting a user's files to demand ransom
+		Logic bombs
+			Triggers the exploit when a certain event occurs
+				Mouse moving
+				File access
+				Specific time
+				Program execution
+				Number of times code is run
+			Destroy a whole bunch of stuff
+		Stegomalware
+			Anything done by a cracker to hide data in an unexpected channel
+			Typically hides malware inside a file
+		Polymorphic packers
+			Malware variants that can change and move in stages
+			Used in APTs
+			Put a bunch of malware into a single package
+		Multipartite virus
+			Combines file and boot/system infector viruses
+		Emerging variants
+
+- Password Attacks
+	Repeated attempts to identify a user account, password, or both
+	Also runs against stored hashed on systems
+	Lots of tools and techniques to crack passwords
+	Can use dictionaries and word lists
+	
+	Spraying
+		Attempts to access many accounts in an environment
+		Test a password against many accounts
+	
+	Rainbow Tables
+		Precompiled dictionary database of plaintext passwords and their corresponding hash values
+		Can be used to find out what plaintext password produces a certain hash value
+
+- Physical Attacks
+	Malicious USB cables
+		Putting a malicious code into a phone charger, taking input from another phone and running it on the computer it's plugged into
+		Cable will be detected by plug and play as a human interface device so it can take input
+	
+	Skimming/Card Cloning
+		Skimming overlays an atm or point-of-sale scanner
+		Crackers can also clone credit and debit cards by stealing name, number, expiration date, and 3 digit code
+
+- Adversarial AI
+	Can include evasion attacks, data poisoning (i.e. model skewing), and model stealing
+
+- Supply-chain Attacks
+	Attacker infiltrates through outside partner, vendor, or provider
+
+- Cloud-based vs. On-premise
+	Cloud-based
+		Data centers
+			Higher technical expertise
+			Better physical separation
+			Fewer vulnerabilities
+			Newer technology
+			Better availability, resiliency, and durability
+			Great economies of scale
+	On-premise
+		Data centers
+			More experience and familiarity
+			Transition introduces risk
+			Single or few accounts => single points of failure to to unsecure access keys/management
+			Higher social engineering threat
+
+- Cryptographic Attacks
+	Hash algorithms produce a fixed-length output
+	Possible for two different inputs to produce identical output
+	
+	Birthday attack - named for the statistical probability of two people having the same birthday
+	Downgrade Attacks - takes advantage of the option on an application to give up a newer and more secure method of communication
+		I.e., using http instead of https, SSL instead of TLS

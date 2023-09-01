@@ -1,0 +1,149 @@
+Cables and Connectors
+
+- Copper Cables
+	Shielded Twisted Pair - protects from interference (electrical signals, radio waves, magnetic)
+	Unshielded Twisted Pair - Simple, less expensive, not protected
+		Cat 5 - 100Mbps
+		Cat 5e - 1Gbps
+		Cat 6, 6a - 1Gbps, but up to 10Gbps depending on the distance
+	
+	Coaxial Cable
+		Thick Ethernet and Thin Ethernet
+		10BASE5 and 10BASE2 (Category, brodaband vs baseband, amount of times past the regular distance (100m) it could go)
+		Used in early LANs
+	
+	Twin-axial
+		Uses two conductors instead of one (twisted)
+		Cost-efficient
+		Used differential signalling
+
+
+- Copper Termination Standards
+	Defined by TIA/EIA-568A and TIA/EIA-568B
+	Only difference between the two is color ordering
+	
+	Straight-through cabling
+		Used when connecting devices like:
+			Switch to router
+			Switch to computer
+			Hub to computer
+			Devices which are different from each other
+	
+	Crossover cabling
+		Used for
+			Switch to switch
+			Switch to hub
+			Hub to hub
+			Router to router
+			Computer to computer
+			Any two devices that are very alike
+
+
+- Singlemode and Multimode Fiber Cabling
+	From interior to exterior
+		Core (clear)
+		Cladding (fibreglass, flexible)
+		Primary coating
+		Strength members
+		Cable jacket
+	
+	Single mode
+		Designed to carry only a single mode (frequency)
+		Dedicated and able to be used over longer distances
+		More expensive
+		Categories
+			OS1: Indoor applications, up to 10km
+			OS2: Outdoor applications, up to 200km
+	
+	Multimode
+		Designed to carry multiple modes at one time
+		Usable only over shorter distances
+		Less expensive
+		Categories
+			OM1 - 10Gbps up to 33m
+			OM2 - 10Gbps up to 82m
+			OM3 - 40Gbps up to 300m
+			OM4 - 40Gbps up to 550m
+			OM5 - 28Gbps per channel over 4 channels
+
+
+- Common Cable Connector Types
+	Components
+		Ferrule
+		Connector body - structure that holds the ferrule
+		Coupling mechanism - allows to interface
+	
+	Types
+		Local connector (LC) - physically small, ferrule is only 1.25mm
+		Straight tip (ST) - round, push in and twist lock
+		Subscribor connector (SC) - square connector, two ferrules, duplex communication
+		Mechanical transfer registered jack - two cores in one ferrule, multimode only
+	
+	UPC - ultra-physical contact - if something reflects at the end, it has a chance of reflecting straight back
+	APC - angled-physical contact - will not reflect straight back
+	
+	Copper types
+		Registered Jack RJ11 - really for phones
+		RJ45 - standard for UTP
+		F-type - domestic TV equipment, ground to satellite links
+
+
+- Common Transceiver Types
+	Converting electrical signals into light
+	
+	Common types
+		Small-form factor pluggable (SFP)
+			Upgraded version of GBIC, 1/2 volume of GBIC
+			Data rate from 100Mbps to 4Gbps
+		SFP+
+			8Gbps/fibre
+			10Gbps/ethernet or optical
+		QSFP
+			1Gbps per channel
+			4 channels
+		QSFP+
+			10Gbps per channel
+			4 channels
+			Can be treated as one channel at 40Gbps
+
+
+- Cable Management
+	Patch panels - where all ethernet connections end up to be connected centrally
+		Punchdown block - where the cables converge
+		RJ45 used to connect to switches
+	
+	Cable Trays
+		Used to run cables out of the way
+		Separate power and data cables
+	
+	Uninterruptible Power Supply
+		Backup and protection power
+		Can be a big source of EMI
+
+
+- Copper Ethernet Standards
+	10BASE-T
+		10 Mbps, baseband, twisted
+	100BASE-TX
+		CAT5 UTP straight-through
+	1000BASE-T
+		Cat5e, CAT6/6A, CAT7
+	GBASE-T
+
+
+- Fiber Ethernet Standards
+	100BASE-FX
+	100BASE-SX
+		Shorter wavelength, less distance, cheaper
+	1000BASE-SX
+	1000BASE-LX
+		Up to 5km
+	10GBASE-SR
+		30 to 50m
+	10GBASE-LR
+		Up to 10km
+	
+	Wavelength Division Multiplexing
+		Create up to 18 channels on a cable
+	Dense Wavelength Division Multiplexing
+		Better bandwidth, up to 88 channels, less distance

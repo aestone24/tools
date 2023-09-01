@@ -1,0 +1,53 @@
+Bash
+
+ - How to sort a list by the second column
+ 	sort -k2 <file>
+ 
+ - How to get a file's line count
+ 	wc -l <file>
+ 	
+ - How to open a web browser to a page
+ 	xdg-open <site>
+ 	
+ 	- To do this using google dorks
+ 		xdg-open www.google.com/search?q=<google dork>%3A<variable>+<search>
+ 		ex.
+ 		xdg-open www.google.com/search?q=filetype%3Apdf+google
+ 
+ - How to parse output with delimiters
+ 	cut -d <delimiter> -f<field number>
+	ex. grep 'PING' tmp | cut -d '(' -f2 | cut -d ')' -f1
+
+ - How to find a line with a particular variable
+ 	grep '<variable>' <file>
+ 	
+ 	
+ 	 - How to make variable a range
+ 	 	grep '[range]\{lengths inclusive\}' <file>
+ 	 	ex. `grep '[0-9]\{1,3\}' <file>` to find between 1 and 3 digits each ranging from 0-9
+ 	 
+ 	 
+ 	 
+ 	 - How to ignore case of variable
+ 	 	grep -i '<variable>' <file>
+ 	 	
+ 	 - How to only match if whole word is variable
+ 	 	grep -w '<variable>' <file>
+ 	 
+ 	 - How to only match if whole line is variable
+ 	 	grep -x '<variable>' <file>
+ 	
+ - How to delete lines with a particular variable
+  	grep -v '<variable>' <file>
+  	
+ - How to remove duplicate lines in a file
+ 	sort -u <file>
+ 	
+ - How to change case of text to lowercase
+ 	tr '[A-Z]' '[a-z]'
+ 	
+ - How to change case of text to uppercase
+ 	tr '[a-z]' '[A-Z]'
+ 	
+ - How to sort ip addresses
+ 	sort -n -u -t . -k 1,1 -k 2,2 -k 3,3 -k 4,4

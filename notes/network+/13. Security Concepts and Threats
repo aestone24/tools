@@ -1,0 +1,119 @@
+Security Concepts and Threats
+
+- Confidentiality, Integrity, and Availability
+	CIA Triad
+
+- Common Network Threats
+	Malware, phishing, DoS, ransomware - all external
+
+- Network Vulerabilities
+	Exposure - allows indirect network access
+	Unnoticed code errors
+	Use the CVE list
+	
+- Network Security Exploits
+	Blank/default passwords (eg default built-in admin accounts)
+	IP Spoofing
+	Application vulnerabilities
+	Default shared keys
+	Service compromise
+	DoS
+	
+- Principle of Least Privilege
+	A user should only have the privileges needed to perform a job or function, nothing more
+	Extend to computers, services, networks, etc.
+
+- Role-based Access Control
+	If you put people in groups and give groups permissions, makes more sense than assigning permissions 50+ times
+	
+- Zero Trust Model
+	No automatic trust for anything inside or outside organizations perimeter
+
+- Defense in Depth Model
+	Layered defense mechanisms
+	Security Control Types
+		Physical
+		Technical
+		Administrative
+	Control Functions
+		Preventative
+		Detective
+		Corrective
+
+- Network Authentication Methods
+	MFA
+	TACACS+
+	RADIUS - 
+	SSO - once signed into one service, other doesn't require authentication
+	LDAP - binds user to a server
+	Kerberos - AD login, authentication using secret-key cryptography, tickets, and a session key
+	Local Authentication
+	802.1X
+	
+- Security Assessment Exercises
+	Vulnerability tests (gather information) and penetration tests (actually simulate an attack)
+
+- Security Information and Event Management
+	Threat intelligence, security analytics, machine learning, IT governance, automated remediation
+	SIEM is very expensive, but has a SaaS option
+
+- Network Attacks
+	Passive - steal, but leave in tact
+	Active - change, add, delete
+	
+	Unauthorized access
+	DoS/DDoS
+	MitM - steal data in an active session
+	Code and SQL injection
+	Privilege escalation
+	
+	DNS poisoning
+	VLAN hopping
+	ARP spoofing
+	Rogue DHCP
+	Rogue access point
+	Evil twin
+	
+	Brute force and dictionary
+	MAC spoofing (replace sender MAC in packet)
+	IP spoofing (replace sender IP in packet)
+	Deauthentication
+
+- Ransomware
+	Malware encrypts files, then demands ransom for decryption key
+	Best defense is regular backing up of files so you don't need to decrypt that noise, just wipe instead
+	Of course this is a problem if they're exporting the data and can leak it...
+
+- Common Malware Attacks
+	Stealth
+	Trojan horse
+	Virus - self-replicating, goal is current system
+	Womrs - can self-propogate, goal is to get into many machines
+
+- On-path Attacks
+	Placing oneself between two devices to intercept communications
+	Protect yourself with authentication certificates, SSL/TLS, S/MIME, VPN
+	
+- Password Security Attacks
+	Brute Force - just try everything
+	Dictionary Attack - cycles through common words
+	Phishing - probably the most successful
+	Rainbow Table Attack - instead of using a list of common words, use a list of common hashing algorithms
+		Attempt to find the algorithm by recreating the stored hashes
+	Credential Snuffing - Assumes stolen credentials will work on other services, tries those
+	Password Spraying - assume an easy password is being used by someone - tests on many users, no clash with lockout policy
+	Keylogger - records all keystrokes, requires some other technique to get it on the device
+	Shoulder Surfing - just watch someone enter their password
+
+- DoS
+	Flood with so many requests that a system gets backed up and can't complete them, making it unusable to other users
+	Volumetric - overwhelm
+	Fragmentation - make packets impossible to put back together
+	TCP state exhaustion - exhaust connection options
+	Application layer - open too many applications, can't keep up
+	
+	Ping of death, UDP flood, SYN (TCP) flood (never respond to ack)
+	
+- Social Engineering
+	Trick users into divulging information
+	Baiting, scareware, pretexting, phishing 

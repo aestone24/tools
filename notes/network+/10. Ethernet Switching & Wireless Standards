@@ -1,0 +1,138 @@
+Ethernet Switching and Wireless Standards
+
+- Data Virtual LAN
+	Logical grouping of devices regardless of physical location
+	Increases number of broadcast domains/only a portion of the network needs hear each broadcast
+	
+	Membership
+		Static/manual - more control, more secure
+		Dynamic/automatic - easier, based on info like MAC address
+	
+	Access link - computer to switch
+	Trunk link - switch to switch
+
+- Voice VLAN
+	VLAN but for VoIP
+	Switch can prioritize voice traffic - differentiate by MAC address
+	Switch adds Voice VLAN tag
+	
+	Has a normal and security mode - security adds MAC verification
+	
+- Ethernet Switching Port Config
+	Duplex. Full is both directions at once, half is one at a time
+	
+	Link Aggregation Control Protocol
+		When ports are not being used, you can borrow their bandwidth and aggregate it
+	Port Aggregation Protocol
+		Proprietary to Cisco, but really the same as LACP
+	
+	Flow Control
+		Reduces packet loss
+	Port Mirroring
+		Used entirely for diagnosing errors - copies outgoing traffic to another destination
+	Port Security
+		Prevents unknown devices from forwarding packets
+	Jumbo Frames
+		Just increases packet frame size to reduce overhead
+
+- Media Access Control (MAC) Tables
+	First 24 bits are assigned to an organization, last 24 assigned by vendor
+	Data Link is subdivided into LLC and MAC sublayers
+
+- Power over Ethernet
+	Enables ethernet cables to carry power
+	Common for VoIP, cameras, etc.
+	100 to 1000+ meters
+	PoE at 15.4W, PoE+ at 30W, and PoE++
+
+- Spanning Tree Protocol
+	Prevents loops in switching/bridging
+
+- Media Access Control Methods
+	CSMA/CD
+	Regulates communication to correct collisions
+	Carrier sense multiple access/collision detection
+	Can be extended to collision avoidance - listening for an empty medium to send, announcing you'll send, then sending - not perfect
+		Uses randomization for amount of time waited to avoid collisions
+	
+- Address Resolution Protocol
+	Resolves an IP to a MAC address
+	Works between layers 2 (MAC, data link) and 3 (IP, network)
+	Requests systems to check their IP and respond with their MAC address
+	
+	Vulnerable to Man-in-the-middle, DoS, and session hijacking
+
+- Neighbor Discovery Protocol
+	Resolves IPv6 to MAC
+	Effectively ARP for IPv6
+	Can be used to detect duplicate addresses
+
+- 802.11 Standards
+	Variance in speed, transmission range, and frequency. Listed in that order for all below.
+	
+	802.11 - 1-2M, better, 2.4
+	802.11a - 50M, worse, 5
+	802.11b - 11, better, 2.4
+	802.11g - 54, better, 2.4
+	802.11ac - 433M to 1.3G, worse, 5
+	802.11ax (Wi-Fi 6) 14G with multiplexing, worse, 5
+
+- Wireless Frequency/Range
+	2.4
+		450 to 600 Mbps
+		150 feet indoors, 300 feet outdoors
+		Goes through objects better
+	5
+		Multiple non-overlapping channels
+		Higher speeds
+		Clearer signals
+		Less interference
+		Shorter range
+
+- WiFi Channels
+	2.4GHz = 11 channels
+	5GHz = 45 channels
+	
+	Channels in 2.4 overlap a bit - some specific choices (1, 6, 11) don't overlap with each other (but do with other channels)
+	Channel width affects speed and volume of data
+
+- Wireless Channel Bonding
+	Can combine multiple adjacent channels together to offer better performance
+	Started in 802.11n
+
+- Service Set Identifier (SSID)
+	The name you give your router
+	
+	Basic Service Set (Switch + hosts)
+	Extended Service Set
+		One or more BSS
+		One access point
+	
+	Independent BSS
+		Simplest IEEE 802.11 network
+		Ad-hoc allows for direct communication bypassing a router
+
+- Antennas
+	Omni-directional - obvious
+	Directional - can focus signal
+	Yagi-Uda - Several cross-facing pieces with their own cross-facing pieces
+	Parabolic Dish
+	Bi-directional - forwards and backwards
+
+- Wireless Encryption
+	WEP - easily crackable, outdated
+	WPA - 2003, better encryption, added data integrity
+	WPA2 - network access control, better encryption. Uses AES algorithm
+	Temporal Key Integrity Protocol - Encryption for wireless LANs
+	AES-CCMP - higher security, approved for government, needs newer hardware
+
+- Cellular
+	GSM - 90% of mobile connections, 900MHz or 1.8GHz, compress data before sending
+	TDMA - divides channels into three time slots, only listen to what's in your slot, allows more users
+	CDMA - 2G/3G, multiplexing, 800MHz/1.9GHz, only pay attention to code that matches your transmission
+	LTE - OFDMA, frequency ranges to divide into separate channels
+	5G - Faster, lower latency
+
+- MU-MIMO
+	Multiple input/multiple output, many antenna on each end
+	802.11ac is 3.47Gbps to 6.93Gbps

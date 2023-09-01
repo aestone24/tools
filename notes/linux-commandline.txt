@@ -1,0 +1,20 @@
+Linux-Commandline
+
+- Make a directory
+	mkdir <directory>
+
+- Make a bash script
+	touch <filename>.sh
+
+- Make a file executable
+	chmod +x <file>
+
+- Copy a file
+	cp <file location> <new location>
+	flags:
+		-r - Recursive (for use on directories with files in them)
+
+- Remove a file
+	rm <file>
+	flags:
+		-r - Recursive (for use on directories with files in them)

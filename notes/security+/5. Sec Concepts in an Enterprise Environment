@@ -1,0 +1,118 @@
+Security Concepts in an Enterprise Environment
+
+- Change and Configuration Management
+	Diagrams and Topologies
+	Baselines
+	Naming and tagging
+	Schemas
+	
+	Change Management
+		Goal is to maximize amount of successful service and product changes
+		Make certain risks have been adequately assessed
+		
+		Lifecycle
+			Submitting - proposed change analyzed and validated
+			Approving - proposed change brought to te right person for approval
+			Documenting - change needs to be inputted into a change log or config database
+			Testing - test and verify before implementation
+			Implementing - deploy based on a determined schedule
+			Reporting - submit a full report after implementation - if any problems arise, go back to an earlier stage
+
+- Data Sovereignty
+	Data ownership, custodianship, stewardship, usage must be agreed upon in advance in compliance with government regulations
+	This can strongly affect cloud server geolocation
+		An easy fix is to always have your cloud server location in the same country as the company
+
+- Data Protection
+	Proper labeling, handling, and least privilege access
+	Different controls are used for data at rest, in transit, and in use/processing
+	Tokenization can lead to data loss or leakage
+	
+	Data Loss Prevention
+		Manages the loss and leakage of valuable and critical data beyond the domain
+		
+		Data => can leak => to an outsider => resulting in a breach
+	
+	Digital Rights Management
+		Varied control technologies to control usage of proprietary hardware and copyrighted works
+
+- Hardware Security Module
+	Dedicated crypto processors consisting of hardened, tamper-resistant devices
+	Will zero-out all data if compromised
+	Can verify digital certificates, encrypt and decrypt, and verify the integrity of data
+
+- Geographical Considerations
+	Where to store offsite data and backups
+		Geographically should be in a different city, state country, cloud, etc.
+	
+	Always know
+		Jurisdictions
+		Privacy laws
+		Import-export laws
+		Cryptography regulations
+	
+- Cloud Access Security Brokers
+	Software as a Service providers
+	Could be on-premise or in-service provider clouds
+	
+	Extend policies beyond local infrastructure
+	Provides visibility, compliance, data security, and threat protection
+
+- Response and Recovery Controls
+	Accept
+	Mitigate - reduces the amount/impact of risk
+	Transfer/Share
+	Avoid - take no actions
+	
+	Security guards are a critical response control - they wll often deter and prevent just with their presence, but also can actively keep people out
+	
+	CSIRT
+		Internal (swarm) or third-party
+		Should deliver a reliable and trusted single PoC for reporting
+	
+	Activities
+		Recovering data from backups
+		Conducting device location and remote wiping
+		Testing business controls
+
+- SSL/TLS inspection
+	Hardening all web services responding to https clients
+	
+	TLS Best Practices
+		Have up-to-date security software and settings
+		update browsers
+		Verify encryption is being done
+		Get TlS certs only from trusted authorities
+		Employ pinning/OSCP stapling
+
+- Hashing and API considerations
+	Hashes are only half the key strength due to the "birthday paradox'
+	Older protocols should be avoided due to collision attacks
+	AES-256-GCM is best, built in hash authentication and integrity with symmetric encryption
+	
+	API Considerations
+		Digitally sign all API calls
+		Do not embed ccredentials in a call
+		Only connect to trusted sources
+		Protect secret keys for API calls
+		Deploy secure coding practices
+	
+- Site Resiliency
+	Refers to maintaining durability of high-availability and mission-critical services and data
+	
+	Cold site - empty building with HVAC capability - can take up to 24 hours to set up
+	Warm site - Will have some hardware, like racks, wired ethernet, may have personnel who manage it
+	Hot site - enough duplicate hardware that it only takes an hour or so to get up and running - sometimes called parallel
+	Mobile sites - above but in trailers
+	Hybrid cloud - some public some private
+	
+- Deception and Disruption
+	Honeypots and evel twins used in wireless networks to trap potential attackers and as MitM attacks
+	Honeynets - entire physical and virtual subnets
+	Honeyfiles or honey tokens - used to catch privileged insiders during a structured attack
+	Basically, all of these are to figure out who is trying to break in but don't give any valuable stuff to them
+	
+	Fake Telemetry
+		Adding a fake layer to your infrastructure to employ decoy assets, fake data, or anything to slow attackers down
+	
+	DNS sinkholes - Look at malicious traffic, analyze, and adapt - route malicious or suspicious traffic to an IDS sinkhole server to inspect

@@ -1,0 +1,184 @@
+Virtualization, Cloud Computing, and Cloud Cybersecurity Solutions
+
+- Virtualization Basics and VM Security
+	A hypervisor is the software allowing multiple OSs to run on a single machine
+	Machine running hypervisor is "host", the VMs are "guests"
+	
+	Type 1 Hypervisor
+		Bare metal, native
+		Exists outside OS - on boot select a VM
+	Type 2 Hypervisor
+		Exists inside host OS, VM hosted inside hypervisor on VM
+	
+	Vulnerabilities
+		VM Sprawl - too many VMS to keep track of and manage
+			Can lead to shadow IT
+
+- Cloud Models
+	Effectively VMs with economies of scale
+	Security is a shared responsibility between client and provider
+	
+	IaaS
+		Provision processing, storage networks, and other resources
+		Consumer does not manage or control infrastructure, but may control firewalls or subnet
+		
+		CPU, Disk drives, networks, and data centers provided
+	
+	PaaS
+		Offer OS, middleware, runtime
+		Control over deployed applications and host environment configurations
+		Common services include containers, development platforms, databases, security and threat modelling, etc
+	
+	SaaS
+		Entire application running in cloud
+	
+	Cloud models
+		Private - on-premise sandbox within an organization
+		Public - deploye by a provider, i.e. AWS
+		Community - deployed by a consortium in a sector
+		Hybrid - combination of public, private, or community
+
+- Cloud Service Provider Concepts
+	AWS offerings
+		Archiving
+		Backup and restore
+		Blockchain
+		Business Applications
+		Cloud migration
+		Containers
+		Content delivery
+		Database migrations
+		Data Lakes
+		DevOps
+		E-Commerce
+		High performance computing
+		Hybrid cloud architecture
+		IoT
+		Machine Learning
+		Mobile services
+		App dev
+		Remote work/learning
+		Scientific computing
+		Serverless computing
+		Web sites
+	
+	Manages Security Service Providers/MSSP
+		Outsourced security monitoring
+		Can apply to on-premise, cloud, or both
+		I.e.
+			Managed 3-7 layer firewalls
+			IDS/IPS
+			EDR
+			VPN support
+		Providers
+			Fortinet, e.g.
+			24/7 services
+	
+	Fog computing
+		Decentralized computing between data source and cloud
+		
+		Analysis to network edge, resources close to where they're needed
+		Akin to Hybrid as a Service
+	
+	Microservices
+		Small independent services communicating over well-defined APIs
+
+- Infrastructure as Code
+	Defining cloud deployment of infrastructure in a secure and repeatable manner
+	Files define the deployment
+	
+	Code infrastructure as YAML or JSON
+	Use CSP's browser console to create a stack based on code
+	CSP configures stack and resources as defined
+
+- Containerization
+	Containers
+		Isolated abstracted applications with all needed components
+		Portable modules across platforms and clouds
+		Can be server-based or serverless
+		Contribute to immutability - replace the container instead of updating
+		Function like VM for application code
+	
+	Docker
+		Containerization platform
+	
+	Kubernetes
+		Orchestrator for container platforms
+
+- Serverless Architectures
+	AKA Functions as a Service
+	
+	Allows full focus on core product instead of operating servers/runtimes
+	
+	Serverless code
+		AWS Lambda, eg
+		Do not need to deploy a server, can run code based on any number of events
+	Serverless containers
+		Eliminates need to provision and manage servers, allows paying for resources per application
+	
+	Services Integration
+		Integration platform software
+		Integration Platform as a Service
+		SaaS vendor tooling
+		Custom coding by in-house team
+		Function Platform as a Service
+
+- Transit Gateways
+	Centralized logical routed hubs in the cloud
+	Can scale networks across accounts and VNet to keep up with growth
+	
+	Effectively allows connection (maybe via VPN) to one gateway which will give you access to all of the other things on the network
+	
+- Cloud Storage Security
+	Includes block and object storage
+	
+	Objects are typically publicly accessed via URLs or API calls, make sure they are protected by TLS
+	Data at rest in cloud should have server-side encryption with a managed key service
+	
+	Client-side encryption is also a possibility - encrypt yourself and then upload it
+	Server-side encryption also an option
+	
+- Cloud Network Security
+	Begins with virtual network subnet design
+	Must evaluate all connectivity options (gateways, endpoints, VPN)
+	Various layer 3/4 static and stateless firewalls
+	WAF deployment on load balancers, CDN distributions, API GWs
+	Managed threat modeling and DDoS solutions
+
+- Cloud Compute Security
+	Security group firewalls and VPC endpoint policies
+	Dynamic allocation of resources and visibility
+	Container security by design
+	Functions as a Service can provide security
+	
+	OWASP top 10 IoT vulns
+		Weak passwords
+		Insecure network services
+		Insecure ecosystem interfaces
+		Lack of secure update mech
+		Insecure or outdated components
+		Insufficient privacy protection
+		Insecure data transfer and storage
+		Lack of device management
+		Insecure default settings
+		Lack of physical hardening
+
+- Cloud Security Solutions
+	Clous Access Security Brokers
+		Software service between customer ans SaaS provider
+		Can extend policies beyond local infrastructure
+		Assist in implementation and enforcement of identity/access management
+	
+	Next Gen SWG (Secure Web Gateway)
+		Protects your enterprise from mounting volume and complexity of cloud-based threats
+		
+		Web content filtering
+		TLS decryption
+		CASB and DLP
+		ATP
+		Visibility and metadata context
+	
+	Types of Audit Reports
+	SAS - was an authoritative standard
+	SSAE - standard for service organizations
+	ISAE - issued December 2009 by IAASB

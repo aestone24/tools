@@ -1,0 +1,40 @@
+OSINT
+
+whois <target.com>
+
+ping -c 1 <target.com>
+whois <target ip>
+
+ - Google Dorking
+	https://www.exploit-db.com/google-hacking-database
+	
+	site:cgi.com filetype:xls OR filetype:xlsx
+	site:cgi.com filetype:doc OR filetype:docx
+	site:cgi.com filetype:ppt OR filetype:pptx
+	site:cgi.com filetype:pdf
+	site:cgi.com filetype:txt
+	site:cgi.com filetype:php
+	inurl:"/admin"
+	
+ - Shodan
+ 	shodan.io
+ 	
+ 	country:<2 letter country code>
+ 	state:<2 letter state code>
+ 	city:<City name>
+ 	org:<Organization name>
+ 	port:<Open port number>
+ 	title:<Content in HTML tag>
+ 	html:<Content in page>
+ 	product:<Name of software or product>
+ 	version:<version of a product>
+ 	net:<Net block, ex. 123.123.0.0/16>
+ 	os:<Operating system>
+
+ - Pastebin
+ 	pastebin.com
+ 	
+ 	Common dumping grounds for leaked credentials
+ 	Can be leveraged using google dorks, eg:
+ 		site:"pastebin.com" intext:"password" AND intext:"<target>"
+ 	

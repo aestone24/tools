@@ -1,0 +1,112 @@
+Identity, Account, AAA
+
+- Identity Controls
+	An IDP is a service that offers users or devices a single set of login credentials that authenticates and authorizes over multiple platforms
+	Federated Identity - a single consistent profile that can be used over multiple platforms
+	Tokens, assertions, certificates can grant access as well
+
+- Account Types
+	User accounts - usually just employee
+	Guest and generic accounts - disable them when you can
+	Shared accounts/credentials - just don't. Don't have these
+	Service and Application Accounts - Passowrds usually not changed super often, so make sure you DO do that
+	Privileged and emergency fallback accounts
+	
+	Problems
+		Overprivileged users - always obey principle of least privilege and dual operator principles - need two people to cover all sides of an activvity
+		Use separate account for admin tasks
+		Lack of logging, auditing, reporting
+		Assess vulnerabilities from privileged insiders
+
+- Common Account Policies
+	AWS
+		Access management - groups
+		Can give up to 10 different role permissions
+		
+		Account settings
+			Contains Password Policy - set 10-13 characters, uppercase, lowercase, numbers, symbolds, etc.
+
+- Advanced Account Policies
+	Geofencing/geolocation
+		Geolocation is a point on a map, whereas fencing is an area
+		Mobile Device Management, ie
+	
+	Attribute-based-access-control
+		ABAC can be used for authorization solutions for API, functions, and micro-services
+
+- Authentication Management
+	Password Key Management
+		Should be audited regularly
+		AUP should have sections on password management and a clear-desk-policy
+		Password vaults can be used for this
+	
+	Trusted Computing
+		TPM (Trusted Platform Module)
+			Tamper-resistent security chip installed on the device, stores passwords, certificates, etc.
+		SED (Self-encrypting Drives)
+			Encrypts data when written, decrypts when read
+		HSM (Hardware Security Module)
+			Tamper-resistent dedicated appliance or module
+			Manages, processes, generates, and stores keys
+			Verifies certificates, SSL connection accelerating, Encryption, and verifying integrity
+	
+	KBA (Knowledge-based Authentication
+		Security Questions and Answers
+		Statc - choose from list of questions
+		Dynamic - Generate questions that have to do only with the specific person - i.e. 'Did you live at this address?' 'Did you ever own this car?'
+
+- Password Authentication Protocol (PAP)
+	Provides an optional authentication phase before proceeding to PPP Network Layer protocol
+	
+	IEEE 802.1x (PNAC)
+		Extension of PPP
+		
+		EAP
+		PEAP
+		EAP-FAST
+		EAP-TLS
+		EAP-TTLS
+	
+	RADIUS
+		Client-server protocol enabling remote access
+		Considered a desireable accounting solution
+
+- Authentication Procotols for Federation and SSO
+	SAML - XML-based open-source SSO standard
+		Identity provider - declares identity of usesr
+		Service Provider - takes assertion and passes it to app/service
+	
+	OAuth - JSON based, allows third-party app to get limited access to an HTTP service
+		OpenID is an identity layer on top of OAuth 2.0
+			Can get basic profile info about user with REST-like methodology
+	
+	Kerberos - SSO authentication using secret key cryptosystem
+		Uses ticket for assertion or token
+		Mutual Auth
+		All comms encrypted
+		Trusted 3rd part called a KDC
+
+- Access Control Schemes
+	DAC - restricts data and systems
+		Advantages
+			Easy
+			Least Privilege
+			Owner has control over access
+		Disadvantages
+			Doc must be strictly maintained
+	
+	Role-based
+		Relies on org chart, roles, responsibilities
+		Based on enterprise objectives and architecture
+		Framework set by admin
+		
+		Adv
+			Easy to implement/control
+			Built-in to many frameworks
+		Disadv
+			Scope creep
+			Audit requirements
+	
+	Rule-based
+		Dynamically assigned based on criteria
+		defined by sysadmin

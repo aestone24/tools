@@ -1,0 +1,158 @@
+Network Troubleshooting Methodologies and Tools
+
+- Identifying the Problem
+	Gathering information
+	Start with physical problems, like power, or disconnected peripheral devices
+	
+	Next, identify symptoms
+	
+	Attempt to recreate the problem and document your steps
+	
+	Approach each problem individually, narrowing the scope, and then work your way out as the small problems have been eliminated as possibilities
+	
+- Establishing the Cause
+	Finding the root cause and fixing it ensures a permanent fix
+	
+	List possible causes and prioritize based on likelihood
+	
+	Start with obvious questions when questioning - easiest solution is often right
+	
+	Use the OSI model as an idea of where to look next
+
+- Testing Techniques
+	Testing any theory of cause allows you to give it credit or deem it unlikely
+	
+	Theories need to be validating by confirming results
+
+- Identifying Potential Effects
+	If you don't have a perfect fix, make sure you understand the side effects of your workaround
+	
+	When attempting workarounds, document and note alternatives in case first choice doesn't work
+	Always share documentation
+
+- Resolving Problems
+	Verify authority first - you may lack permission to fix it - if so, escalate and provide all the information you've gathered
+	Escalation begins with the closest resource
+	Resolve within your expertise
+	
+- Verifying System Functionality
+	Essentially asking "did it work?"
+	Confirm the *original* issue was resolved
+	
+	Move to mitigation after verification
+
+- Documentation
+	Always use each experience to update or create new documentation - it will help future you and your teammates
+	Likewise, when stuck, check to see the documentation made by your other teammates
+	
+	List symptoms, corretive actions (fails and successes) and their results
+	
+- Specifications and Limitations
+	Indicators include speed, packet loss, latency, and jitter
+	Can optimize throughput with wired connections - problems can be solved by rebooting, disabling firewalls, going around faulty equipment
+	
+	Bandwidth = maximum transfer speed, latency is how long it actually takes to reach point A from point B - think how much data can be sent vs how fast it can travel
+	Can optimize by eliminating non-essential traffic
+
+- Network Cabling Applications
+	Power over Ethernet can, obviously, use ethernet to power devices
+
+- Attenuation, Latency, and Jitter
+	First, cabling that doesn't meet standards, is outdated, or is not properly installed, may be the cause
+	
+	Interference
+		Signal disruptions
+		can be caused by magnetism
+	
+	Attenuation
+		Reduction of strength over distance due to resistance
+		Fix by using better materials and/or repeaters
+	
+	Latency
+		Time for data to travel
+		Fix by using better materials
+	
+	Jitter
+		Deviation in a signal pulse
+		Due to congestion, drift, route changes, or sequence order
+	
+	Duplexing issues
+		Caused by mismatch, or old devices using half-duplex
+	
+- Troubleshooting Crosstalk and EMI
+	Signals on one wire interfere with those on another
+	
+	NEXT refers to ability to reject crosstalk
+	FEXT needs to take attenuation into account
+	
+	EMI caused by electromagnetic fields/disturbance
+	Every source of electricity has an EMF
+
+- Troubleshooting Opens and Shorts
+	Open - connection not continuous to intended termination
+	Short - short circuit
+	
+	Testing for opens - continuity tests and resistance tests
+	Resolving opens - reconnect cables, replace cables, replace devices
+	
+	Causes of shorts - exposure to heat, vibration, etc., contact
+	Symptoms - heat, network issues, power issues, collisions
+	Testing for shorts - voltage tests, but make sure you know what voltage SHOULD be going at any point
+
+- Duplex and Transceiver Mismatches
+	Auto Negotiation - before transmission agrees, devices agree on configuration
+	Recognizing Duplex Issues
+		Late collision error - both devices will recognize different errors
+		Eventually TCP frame becomes full and everything grinds to a halt
+	
+	Auto negotiate almost never fails, so go with that when able
+
+- Bad ports, bottlenecks, and VLAN mismatches
+	Switch problems
+	
+	Bottlenecks - imagine a multiple lane road closing down to one lane, causing backup
+		Too much volume going through one place
+	
+	Configure trunking switches to same native VLAN
+
+- Damaged Cables / Bent Pins
+	Can cause
+		Complete service disruptions
+		Slow or intermittent performance
+	
+	Diagnosing
+		Visible physical damage
+		Check connectivity
+	
+	Bent pins
+		Connectivity issues
+		Performance issues
+		Caused by improper seat, often
+	Identifying
+		Look at it. Is it bent?
+
+- LED Status Indicators
+	Solid Green Light
+		Connectivity is present
+		Successful connection to something on other end
+	
+	Flashing Green Light
+		Rapid flashing - regular network traffic
+		Slow flashing - some kind of issue
+	
+	Amber Lights
+		If went from green to amber, usually a problem
+		Otherwise, need to check device
+	
+	Alternating
+		Rate usually matters - faster is usually fine, slower is usually a problem
+	
+- Cable Tools
+	Cable stripper - used to expose internal wires
+	Crimper - clamps a connector into place to make a connection
+	Multimeter - measures voltage, amps, and ohms
+	Tone generators/sensors - used to check where wall ports go
+	Loopback plug - connector but no cable, used to test for electrical or signal problems in a device
+	Punchdown tool - presses wire into connecction on back of a patch panel
+	Cable tester - tests for continuity
+	Wire map tester - checks that sequencing is correct on both ends of an ethernet wire

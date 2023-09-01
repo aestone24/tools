@@ -1,0 +1,82 @@
+Network Operations
+
+- Network Performance Metrics
+	CPU Usage on network device (router, eg)
+	Cabling/Connectivity
+	DNS Issues
+
+- SNMP
+	Managers (Servers) and Agents (report on clients)
+	SNMPv1 had bad security, no encryption
+	SNMPv2 was quickly replaced by v3
+	v3 has good security, authentication, and encryption
+	SNMP hierarchy is a tree
+
+- Network Device Logging
+	What happened,  who did it, when, and where?
+	Audits cover security, resource access, etc.
+	Codes
+		0 unusable
+		1 Alert
+		2 Critical
+		3 Error
+		4 Warning
+		5 Notice
+		6 Info
+		7 Debug
+
+- Network Interface Stats
+	Link State - there will be a light on the device
+	Speed, type (duplex, eg)
+	Send/Receive Errors
+	Protocol Statistics (packets and bytes travelling)
+
+- Network Interface Errors
+	FCS Errors - packet has corrupted on the way
+	Giants - packet is too large
+	Runts - packet is too small
+	Encapsulation errors - errors in packet encapsulation
+
+- Environmental Factors and Sensors
+	Must balance heat and humidity
+	Need fire controls - stopping ventilation out, keeping doors sealed, etc
+
+- Network performance/availability baselines
+	Baselines need to be updated as things change on your servers
+
+- NetFlow
+	Cisco tool
+	Used to monitor and plan/grow network, and analyze the network, i.e. look for anomalies
+
+- Network Uptime/Downtime
+	Uptime is time up and running and available
+	Goal is to get lose to 100% uptime
+	
+	Downtime will cost you in lost revenue, recovery costs, and lost productivity
+
+- Organizational Planning/Procedures
+	Have an incident response plan including preparation, detection, containment, investigation, remediation, and recovery
+	Software development life cycle can be helpful here
+
+- Network Security Policies
+	Password Policy
+	Acceptable Use Policy
+	Bring Your Own Device
+	Onboarding Process
+	Offboarding Policy
+	IT Security Policy
+	Data Loss Prevention
+	Remote Access Policy
+
+- Network Operational Documentation
+	Physical Network Diagram
+	Logical Network Design
+	Main Distribution Frame/Intermediate Distribution Frame
+	Site Survey Report - visualizes coverage areas and data rates
+	Network Audits
+	Baselines
+
+- Agreements
+	NDA
+	Service Level Agreement (often cloud services use this)
+	Memorandum of Understanding (Establishing partnerships)

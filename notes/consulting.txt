@@ -1,0 +1,19 @@
+Consulting
+
+ - It is super important to keep notes that are current and well organized
+ - After a TTP has been covered, immediately take notes on it in a comprehensive and complete way
+ - During an op, make notes of everything you do as well as the time at which you do it
+
+- OSINT Report Writing
+	All findings split into the following sections:
+	Observation: (describe what you found)
+	Severity: (Info - Critical)
+	Background: (general background info on the finding)
+	Recommendations: (how do u mitigate the risk)
+	See Also: (web articles that support your finding)
+	Affected Hosts: (IP addresses)
+	
+	Always write reports with findings listed from highest to lowest severity
+
+- Client-site rules
+	Never change the volume of your conversation during a pentest

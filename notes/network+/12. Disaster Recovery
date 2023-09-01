@@ -1,0 +1,48 @@
+Disaster Recovery
+
+- Load Balancing
+	Distribution of incoming traffic
+		Algorithms
+			Round Robin
+			Fewest Connections
+			Least Time (Fastest Response)
+			Hashing
+			IP Hashing
+			Random with two choices (narrow to two, then fewest connections)
+		Hardware and software options
+
+- Dynamic multipathing techniques
+	Balancing loads across paths
+	Multiple paths also reduces chance of total failure
+
+- Redundant Hardware and Clusters
+	Clustering, a type of redundancy, uses a group of functionally equivalent devices
+	Clusters have automatic failover recovery but can be complex
+
+- Facilities and Infrastructure Support
+	Uninterruptable Power Supply
+		Standby - turn on as soon as power lost
+		Line interactive - responds to minor fluctuations
+		Double conversion - takes in AC, turns to DC for battery, turns back to AC for outflow
+	Power Distribution Units (they distribute power)
+	
+- Network Interface Card Teaming
+	Combine multiple cards into one logical interface, allowing load ballancing and fault tolerance
+	Active-passive - only one active at a time, other turns on in case of failure
+	Active-active - all going all the time
+	Adapters called team-members, interface is the "team"
+
+- High Availability Solutions
+	MTTR - mean time to repair
+	MTBF - mean time between failures
+	High availability achievable via cloud
+	Hot site - infrastructure in place, ready to go, replicated
+	Warm site - infrastructure there, replication needed
+	Cold site - not ready to go, but space owned
+	
+- Network Backup and Restore Options
+	Always have extra copies of your data
+	Full backups always back up all data, even that which hasn't changed
+	Incremental backups and differential backups only backup where changes have occurred
+	Incremental looks at most recent backup, differential looks back to last full backup
+	CDP updates backup in real time

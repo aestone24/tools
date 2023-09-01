@@ -1,0 +1,173 @@
+Troubleshooting Network Issues
+
+- Protocol Analyzers and Packet Sniffers
+	Packet Sniffers
+		Intercept and log network traffic
+		Use includes establishing baseline of normal activity and searching for abnormal activity
+		Software and hardware-based options
+		Can find any passwords passed in clear text
+		Can identify applications being used
+		Useful for diagnostic testing/troubleshooting
+		Can also identify protocols and vulnerabilities of network
+
+- Network Port Scanning
+	Identifies open ports, and therefore vulnerabilities. Check networking notes in ~/notes
+	FTP Bouncing can be used to disguise the sender location
+
+- Wi-Fi Analysis Tools/Techniques
+	Can be software or hardware
+	Maps a site and identifies interference
+	
+	Shows speeds, lost packets, retry rates, etc.
+
+- Bandwidth Speed Testing
+	Affected by distance (lost packets), obstacles (lost packets), wiring/interference, devices, and sometimes even time of day/automated processes
+	Note the balance of download/upload speeds
+	
+- Network Software Tools
+	iperf - measures maximum bandwidth performance for TCP and UDP
+	NetFlow - Shows how information moves through your network, including path taken. Collectors and Analyzers are often separate
+	TFTP - simplified FTP, uses UDP
+	Terminal Emulators, like Telnet and SSH
+	IP Scanners
+
+- Command Line Tools
+	Ping - test connectivity between two hosts using ICMP
+	ipconfig - shows network config, tcp/ip address, default gateway, etc. - parameter /all will display even more
+	tracert - shows packet path from source to destination, good for troubleshooting
+	pathping - ping plus tracert
+	arp - resolves mac to ip
+	route - configures a routing table
+
+- Linux Commands
+	ifconfig - can be used to assign an address, configure, or display current configuration
+	tcpdump - filter TCP/IP packets to save for analysis
+	iptables - manage tables of IPv4 packet filter rules
+	nmap - oh yeah, let's go. port scanner
+	dig - queries dns servers for host addresses or server rules. similar to nslookup
+
+- Wireless Specifications and Limitations
+	Wi-Fi Router Position is often a limitation - try and keep it centralized
+	Keep in mind that packet loss is a problem that presents itself as slow speed
+	
+	EIRP - measure of antenna power
+	
+	Reflection and absorption will cause disruptions
+
+- Connectivity Considerations
+	Incorrect Antenna aiming can be a problem on legacy access devices
+	Channel utilization
+	Antenna polarization, frequency, coverage, etc.
+	Wireless Site Surveys should be performed prior to deployment and during troubleshooting
+
+- Connectivity Issues
+	Other Wi-Fi networks in the same range can cause interference
+	Incorrect channel assignments can be a problem, particularly on older devices
+	The more users, the less bandwidth-per-user
+
+- Wired Network Considerations
+	Crosstalk
+	Duplex Mismatching
+	Incorrect VLAN assignments
+	Bad ports
+	Interface configuration issues
+	Bottlenecks
+	Routing Tables - in larger environments, use dynamic routing instead of static or manual entries
+	Damaged Cables
+
+- Default Gateway Issues
+	Just means the router that is used to access other networks
+	
+	If it's unreachable, that's a big problem
+	169.254.0.0/16 means an IP was not able to be gathered from DHCP - also means there is no default gateway
+	If no internet access needed, no need for default gateway
+
+- Incorrect Netmask Issues
+	A subnet mask is always "all ones" followed by "all zeroes"
+		This basically means it's ones up until it switched from network to host
+	Class A - 8 netmask bits, 126 networks
+	Class B - 16 netmask bits, 16000 networks
+	Class C - 24 netmask bits, 2100000 networks
+	
+	Make sure this is correctly configured, otherwise communication issues
+	
+- Duplicate IPs
+	One or both may be disabled or have connectivity issues
+	Usually a manual config issue - ensure statically assigned IPs never conflict
+	Make sure DHCP scope excludes statically assigned IPs
+	
+- Duplicate MAC
+	this SHOULD NOT happen
+	Use ARP to discover MAC addresses
+	
+- Resolving DNS Issues
+	If DNS is down, browsers report 'no internet access,' even though DNS is the issue
+	Have a secondary DNS server in case first goes down
+	
+	When troubleshooting, start with most obvious, smallest scope, build outwards, make sure to check for malware/DNS poisoning
+	nslookup can be used to test name resolution
+
+- DHCP Scope
+	Valid range of addresses to be leased to clients
+	
+	Scope issues
+		Not activated
+		Scope not large enough (limited scope)
+		Service or server failed
+		Client-side misconfiguration
+		
+- Rogue DHCP Server
+	Unauthorized DHCP used to redirect clients
+	Requires physical access to pull off
+	
+	Can be detected with ipconfig /all if correct address known
+	Can mitigate with DHCP snooping, IDS, network monitoring
+	
+- Expired IP and Incorrect System Times
+	Always a lease time for DHCP
+	Typically you want to have more addresses than devices, but in places like cafes, shorter lease times are good so that unused IPs can be reassigned
+	Fewer available IPs can be more secure - only the correct number of addresses can have IPs - may as well do static at this point
+	Leases can be renewed
+	
+	Computer clocks can sometimes be inaccurate
+	Kerberos has a small tolerance for time discrepancy
+	Can use universal time servers to synchronize
+
+- SSL Certificates and Blocked Ports
+	Server Name Indication can not match up with certificate, or the certificate can be deleted, expired, etc.
+	Traoubleshoot with SSL labs, Wireshark, etc.
+	
+	Blocked ports are, well, blocked
+	Use a port scanner to check what is open and make changes if necessary
+
+- Incorrect Firewall/ACL Settings
+	Firewall issues
+		Verify logs to check, verify the rules
+		Check NAT - verifying where the wall is, before or after, can change how the firewall works
+
+- Hardware Failures
+	Diagnose switches with ping, physical, connectivity, and lights
+	
+- Services
+	Configure on Windows with services console, cmd, powershell
+	
+	Unresponsive Services
+		Check event viewer
+		Windows Logs > Application
+		Windows Logs > System
+		
+		Resolve: Restart, if stopped
+
+- Wired Connectivity Issues
+	Ethernet Collisions - packets run into each other in the wires
+	Broadcast Storms - a system continually sending out broadcasts - this is bad, find it and stop it
+	Multicast Flooding - similar to above, but an issue with a switch looking for a device
+	Asymetric Routing Problems - multiple paths to the target
+	Routing loop - it's a loop, message never reaches destination
+	DHCP Scope exhaustion
+	Missing Routes - usually an issue with a routing table, can't find device
+	Optical Link Budget - how much of optical power available
+	Certificate Errors
+	Incorrect VLAN - usualy a device has been moved and is now using a new port/adapter
+	Feature Licenses
+	
