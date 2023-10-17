@@ -1,0 +1,113 @@
+Wireless, Mobile, and Embedded
+
+- Wireless Cryptographic and Authentication Protocols
+	WPA - TKIP, PSK, Deprecated
+	WPA2 - CCMP, PSK
+	
+	EAP variants
+		MD5 - poor, easy
+		TLS - very secure, hard
+		TTLS - secure, moderate
+		PEAP - secure, moderate
+		FAST - secure, moderate
+	
+	WPA3 - latest security methods, GCMP-256, 384-bit HMAC, 384-bit elliptic curve
+
+- Wireless Security Methods
+	Personal - shared secret, manually configured, TKIP
+	Enterprise - authentication server, centralized control, TKIP
+	
+	WPA2 Personal - AES
+	Enterprise - EAP, AES
+	
+	Wi-Fi Protected Setup - vulnerable, never use it
+
+- Wireless Installation Considerations
+	
+- Mobile Connection
+	Cellular - many small inter-connected transmitters
+	Narrowband - private, typically
+	Baseband - also like above
+	Bluetooth - personal area networks
+	RFID/NFC
+	
+	Infrared communication - point to point or diffuse
+	
+	Wireless USB over PAN
+
+- Mobile Device Types
+	MicroSD HSM - features for RSA and ECC, good for mobile devices
+	
+	SEAndroid - android using security-enhanced linux
+
+- Mobile Deployment Models
+	BYOD
+	CYOD - like BYOD but CYOD devices must be approved by organization
+	COPE - company gives employees mobile devices which can be handled as if it's personal
+	VDI - virtual desktop interface for mobile devices
+
+- Mobile Device Management
+	Enterprise Mobility Management
+		Combination of MDM and MAM
+	
+	MDM
+		Enroll devices for management
+		Remove corporate data from devices
+	
+	MAM
+		Publishing apps to users
+		Configuring, updating
+		Securing and removing data from apps
+		
+	Mobile Content Management (MCM/MIM)
+		Falls under EMM
+	
+	Geolocation/Geofencing
+	Mobile Biometrics
+	
+	Containerization of apps into a segmented user space
+	Storage segmentation
+	Full Device Encryption (hardware level)
+	
+	SEP - security circuit to perform secure services, running on own OS
+
+- Mobile enforcement and monitoring
+	Sideloading - installing applications that aren't from official market
+	Jailbreaking - like above but for Apple
+	Rooting - grants full access to a device at root level
+	
+	SMS, MMS, and RMS often overlooked
+	
+	USB OTG - enables a device to act as a USB host
+	
+	Tethering
+	
+	Mobile devices for payments
+	
+- Embedded System Security/Constraints
+	Raspberry Pi - keep updated, no auto-login, password, disable pi user, SSH keys
+	Arduino - Apply same ideas
+	
+	FPGA - Systems with firmware programmed in field that makes them vulnerable
+
+- SCADA Security
+	Ex
+		Facility control, water, traffic lights, etc
+	Concerns
+		Terrorism, espionage, sabotage
+
+- IoT
+	Nobody has incentive to patch after shipping
+	OWASP IoT Top Ten exists
+
+- Securing Specialized Systems
+	VoIP - harden/patch IP PBX
+		Scurity in transit
+		Control source
+	HVAC
+		If exposed controls, hackers can change settings to unsafe things/gain access to information/use to pivot
+	SoC
+		Lack of security controls
+		Root access concerns
+	RTOS
+		Code injection, privacy, shared memory, priorities, DoS

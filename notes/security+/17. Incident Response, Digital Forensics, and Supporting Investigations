@@ -1,0 +1,135 @@
+Incident Response, Digital Forensics, and Supporting Investigations
+
+- Incident Response Plans and Processes
+	Incident response is steps taken when a negative event impacts regular business.
+		Goals include reducing immediate impact and deterring future incidents
+		To be prepared, you need a plan
+		Should have a cyber-incident response team (CSIRT)
+		
+		Lifecycle
+			Preparation - infromation gathering, missions, charters, project initiation tasks
+			Identification - separate events from incidents and breaches
+			Containment - Disconnect devices, use firewalls, do everything to separate the pieces of the network
+			Eradication - sometimes integrated with containment - find the root cause and apply immediate remedies. Remove all IoCs
+			Recover - restore negatively affected data, applications, systems, and evices to an established baseline/pre-compromise
+			Lessons Learned - Using the gained knowledge, hold sessions, share new information/knowledge, prevent recurrence of negative outcomes
+
+- Incident Resonse Exercises
+	Plan review (read-through)
+	Tabletop
+		Examine plans, diagrams, logical and virtual walkthroughs to eliminate gaps/errors
+	Walkthrough
+		Planned rehearsals/drills
+	Simulation
+		Focuses on specific scenarios/areas
+	Parallel
+		Real-world drills while still operating business
+	Full Interruption
+		Real-world drills while ceasing business activities
+
+- Attack Frameworks
+	Cyber Kill Chain
+		A succession of steps and phases used during cyber attack
+		
+		Phases
+			recon
+			intrusion
+			exploitation
+			priv esc
+			lateral movement
+			obfuscation
+			DoS
+			exfiltration
+		
+		Alternate 7-phase
+			Recon
+			Weaponization
+			delivery
+			exploitation
+			installation
+			C&C
+			exfiltration
+	
+	MITRE ATT&CK
+		Knowledge base of aggressive attack methods and practices
+		
+		Matrix Steps
+			Initial access
+			Execution
+			Persistence
+			Priv esc
+			Defense evasion
+			Credential access
+			Discovery
+			Lateral movement
+			Collection
+			C2
+			Exfiltration
+	
+	Diamond Model
+		Helps classify relationships between motivations, victims, and technologies
+		
+		Adversary
+		Infrastructure
+		Capability
+		Victim
+
+- Plan Types for IRT
+	Business Continuity Planning (BCP/COOP)
+		Business Impact Analysis
+		Disaster Recovery Plan
+		BU
+	
+	NIST SP 800-34
+		1. Develop continuity planning
+		2. Conduct BIA
+		3. Identify preventitive controls
+		4. create contingency strategies
+		5. develop information system continuity plan
+		6. plan test training and exercises
+		7. after action report
+		8. ensure plan maintenance
+	
+	IRT (Also CSIRT)
+		Team that receives alerts and alarms
+		Determine severity/priority
+		May be pre-designed
+		May be sent by insurance
+		Can be internal or external
+
+- Forensic Documentation and Evidence
+	Scientific investigation of a cyber incident
+	Need to be carried out in a standardized fashion
+	
+	Procedure
+		Colleciton of evidence
+			Always use write-blockers
+		
+	Chain of Custody is incredibly important
+	
+	Techniques
+		Validation
+		Filtering
+		Pattern Matching
+		Hidden data discovery
+		Searching slack space
+		Tracing
+
+- Forensic Acquisition
+	Order of Volatility
+		Capture data in order of what's most volatile - likely to change, etc.
+		Start with CPU cache
+		Other caches
+		Memory
+		Tamporary file systems
+		Disc drives
+		Removable drives
+		logged data
+
+- Forensic Techniques
+	Integrity
+	Provenanve
+	Preservation
+	e-discovery
+	Data recovery
+	Non-repudiation

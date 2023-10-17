@@ -1,0 +1,63 @@
+Security Policies, Regulations, Standards, and Frameworks
+
+- Personnel Policies
+	NDAs
+	Background Checks and Investigations
+	Onboarding
+	Change management processes
+	Least privilege
+	Mandatory vacations
+	Separation of duties
+	Rotation of duties
+	Clean desk policy
+	Social media usage
+	Acceptable Use Policy
+	SOPs
+	Security Awareness Training
+	Employee Release and Exit Interviews
+
+- Third-party Risk Management
+	Business Partners Agreement (BPA)
+	Service level agreement
+	Organizational level agreement - internal version of SLA
+	Interconnection Security Agreement
+	MOU/A - memorandum of understanding or agreement
+	Measurement Systems Analysis - degree of deviation when using a measurement process
+
+- Data Policies
+	Labelling/asset classification/tagging
+		Attributes
+			Monetary Value
+			Age
+			Utility
+			PII/PHI
+	Data retention and destruction
+	
+- Credenial Policies
+	No shared individual accounts
+	Admins should have another non-privileged account that they use
+	Least privilege
+	MFA
+	Lockout
+	Password Change Policies
+
+- Organizational Policies
+	Change approval policy
+		Submitting
+		Approving
+		Documenting
+		Testing
+		Reporting
+	Asset management
+	
+- Regulations, Standards, and Legislation
+	Regulatory - HIPAA, SOX, General Data Protection Regulation
+	Non-regulatory - NIST, ITIL 4, ISO/IEC, COBIT5, CIS, ISACA
+	
+- Key Frameworks
+	Center for Internet Security
+	NIST
+	ISO
+
+- Benchmarks
+	Establishing a standard to improve from

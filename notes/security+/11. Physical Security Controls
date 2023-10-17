@@ -89,4 +89,42 @@ Physical Security Controls
 
 - Types of Sensors
 	Lighting - not a sensor, but used in conjunction with other controls
-		Ex mercury vapor, sodium vapor, quartz, LED
+		Ex mercury vapor, sodium vapor, quartz, LED, continuous lighting, trip lighting, standby lighting, emergency lighting
+	
+	Types of sensors
+		Photoelectric - breaks in light beams
+		Passive infrared
+		Vibration
+		Acoustical
+		Microwave
+		Electro-mechanical
+	
+	Other
+		Flashing lights on display panels
+		Bell rings
+		SMS
+		Calls
+		Silent alarms
+
+- Secure Areas
+	Mantraps - control access
+		Only one of entry and exit door can be open at a time, doors lock once you're in, can't get out without authorization
+	Faraday Cage
+		Rooms that block electromagnetic fields
+	Safes and Vaults
+	
+	Hot and Cols Aisles
+		Hot aisles are between racks, cold aisles on outside
+
+- Secure Data Destruction
+	Degaussing - removing the magnetic field of physical drive
+	Purging - using software to clean data off the media
+	Wiping - overwrite every sector of drive
+	Encryption - encrypt all files
+	
+	Physical data
+		Burning
+		Shredding
+		Pulping
+		Pulverizing
+		Or just use third-party

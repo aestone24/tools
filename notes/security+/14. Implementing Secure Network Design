@@ -1,0 +1,58 @@
+Implementing Secure Network Design
+
+- Network Segmentation and Zoning
+	Zoning is used to mitigate the risk of an open network
+	Zones have fundamental characteristics defined by the security
+	Public access zone = DMZ
+	Public zone = access to internet
+	Restricted zones
+	All zones connect via perimeters
+	Only the public access zone can interact with the public zone/internet
+	
+	Honeypots and Honeynets are isolated sites designed to appear valuable to an attacker
+	They need to be difficult enough to crack to look worth it. If it's too easy, veteran hackers will be able to tell
+
+- Load Balancing Tech
+	Optimize application availability
+	Routes traffic to servers according to current amount of work being done at each server
+
+- VPNs
+	Dedicated termination points
+	
+- Port Security
+	Switches function at layers 2-4
+	Can be physical or virtual
+	
+	Switch security
+		Loop prevention, flood guard, root guard
+		DHCP snooping for dynamic ARP inspection and IP source guard
+		VLANs
+
+- Firewalls
+	Network or application
+	Restrictive vs permissive
+	Stateless vs stateful
+	
+	First rule that matches is processed, everything after ignored
+	
+	Next Gen Firewalls
+		Layer 5-7 policies
+		Authentication proxy
+		Identity services
+		IDS/IPS
+		UTM
+
+- Network Appliances
+	Defense-in-depth in one unit
+	
+	Can do
+		Network Admission Control (NAC)
+		Bastion or jump hosts
+		Proxy servers
+		IPS sensors
+		Port mirroring
+
+- Advanced Network Environment Solutions
+	Data Activity Monitoring
+	Modern Endpoint Analysis (EDR, UBA)
+	Hardware Security Modules

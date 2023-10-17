@@ -1,0 +1,268 @@
+Basic Cryptography
+
+- Symmetric vs Asymmetric
+	Cryptology - the study of cryptosystems
+	Cryptography - the study and practice of securing communications
+	Cryptanalysis - the study and practice of exploiting weaknesses in communications
+	
+	Confidentiality - hiding data at rest, in transit, and in use
+	Integrity - ensuring data has not been altered while at rest/in transit
+	Availability - protecting from flooding/DoS
+	Non-repudiation - the original sender cannot deny sending the data
+	
+	Where does encryption occur?
+		Application Layer
+		Session - SSL/TLS
+		Network - IPSec
+		Data link - MACSec
+	
+	Cipher - algorithm for encryption/decryption, output called ciphertext
+		Modern ciphers involve transposition, diffusion, and confusion
+	
+	Symmetric - use the same key to encrypt and decrypt
+		Shorter key lengths, faster, more efficient, computationally inexpensive
+		More difficult to secure, don't scale well
+	
+	Asymmetric - two mathematically related keys, one to encrypt, one to decrypt
+		Allows efficient key management, good for digital signatures/key exchange, highly scalable
+		Longer key lengths, slower, more computationally expensive
+		
+		Benefits
+			Provides confidentiality
+				Enrypting with public, decrypting with private
+			Origin authentication
+				Encrypting with private, decrypting with public
+
+- Characteristics of Cryptographic Keys
+	Definition
+		A set of alphanumeric characters used for converting plaintext to cipher text
+	
+	The only element that must remain secret is the key
+	Keyspace - the total number of mathematical possibilities in the set
+	Key lengths often vary from 56 to 4096 bits
+	
+	Uses - Encryption, Hashing, Digital signatures, message authentication codes
+	
+	Keys can be static (used for a long time), session (single use), Ephemeral (short time, one single key establishment process, never stored)
+	
+	Key stretching
+		Programs like PBKDF2 and BCRYPT
+		Use pseudorandom functions applied many times to produce longer/stronger keys for other uses
+
+- Block vs Stream Cipher Suites
+	Ciphers are algorithms which outline the procedures that are followed
+	They involve transposition, diffusion, and confusion
+	
+	Block Cipher Suites
+		Operate on fixed blocks of data (bits) based on key size
+		Measures bigger than the key size are broken into blocks the size of the key
+		
+		Galois Counter Mode
+			AEAD
+	
+	Stream Ciphers
+		Operate on a continuous stream by encrypting one bit or byte at a time
+		Plaintext typically XORed with keystream bits
+		Faster and less complex than blocck ciphers
+	
+	AES is ubiquitous
+		Was the replacement for DES uing Rijndael
+		Block cipher with key sizes of 
+			128 bits with 10 rounds
+			192 bits with 12 rounds
+			256 bits with 14 rounds
+			
+			AES CBC and GCM are the most common
+
+- Cryptographic Hashing
+	Maps data of any length to a fixed-length string hash value
+	One-way, theoretically undoable
+	Birthday paradox is a thing
+	
+	Used to store passwords
+	
+	Functions
+		MD5 - recommended to not still be used, 128-bit
+		SHA-1 - 160-bit
+		SHA-2 (256 or 512) and SHA-3 (224-512) are now standards
+		RIPEMD (128, 160, 256, 320)
+	
+	HMAC (Hashed Message Authentication Codes)
+		Uses cryptographic hashing combined with a secret key
+		Only as strong as the secret key
+		Secret key allows verification
+		
+- Key Exchange Mechanisms
+	RSA
+		Original protocol for establishing secret keys
+	Diffie-Hellman
+		Original protocol for establishing secret keys
+		Widely used asymmetric system (IPSec, TLS)
+		Modes
+			DHKE
+			DHE/EDH (Ephemeral)
+			ECDH (Elliptic Curve)
+				Smaller keys, exceptional strength (3072 standard = 256 elliptic)
+			ECDHE/ECEDH (Both of above)
+
+- Modes of Operation
+	Authenticated/Unauthenticated
+	Counter/No Counter (Adding counter makes it more non-deterministic)
+	Ephemeral (Using forward secrecy, maybe using a key derived from a secret key, only for one session) or not
+	Lightweight Cryptography
+	
+	Forward Secrecy
+		Perfect forward secrecy if compromise of long-term keys does not allow attacker to obtain past session keys
+		Obtained by using non-deterministic algorithms to create session keys
+	
+	Lightweight Cryptography
+		Most current algos designed for desktop/server
+		Several areas where highly-constrained devices are interconnected - so we need lighter weight algorithms for them
+
+- Advanced Cryptography Concepts
+	Digital Signatures
+		Scalable mechanism for providing authenticity, integrity, and non-repudiation
+		Does not offer confidentiality
+		Random private/public key pair
+		SHA1/2/3 alg
+		Signing algs
+			RSA
+			DSA
+			ECDSA
+	
+	Quantum Computing
+		Uses qubits, typically subatomic particles like electrons or photons
+		Power comes from the fact that qubits can represent numerous possible combinations of 1 and 0 at the same time (superposition)
+		Adding qubits adds power exponentially
+		Will eventually undermine cryptography
+	
+	Post-quantum computing
+		Developing new systems that can be implemented with today's computers that will resist attacks from tomorrow's quantum comps
+		
+		Larger size, more complex trapdoor functions, lattice-based cryptography, supersingular isogeny key exchange
+	
+	Quantum communications
+		Leverages laws of quantum physics/computing to protect data
+		Transmit sensitive data using quantum key distribution (QKD)
+		QKD sends encrypted data as normal bits, decryption key info encoded and transmitted using qubits
+		Theoretically ultra-secure
+	
+	Homomorphic encryption
+		Helps protect data-in-use
+		Data remains encrypted while being processed
+		Commonly uses public/private
+		Algebraic operations on ciphertext
+	
+	Blockchain
+		Public ledger consisting of a digital "chain of blocks"
+		Transaction data succh as date, time, ammount
+		Participants identified based on digital signatures
+		Unique hashes distinguish blocks from each other
+		
+		For a block to be added
+			Transaction needed
+			Transaction must be verified
+			Transaction must be stored in a block and given a hash
+
+- Common Use Cases/Limitations
+	Low power devices that need low latency and high resiliency
+		Lightweight crypto and elliptic curve
+	Must support
+		Confidentiality
+		Integrity
+		Obfuscation
+	
+	Common Limitations
+		Speed
+		Size
+		Weak keys
+		Time
+		Longevity of a key
+		Predictability (consider dictionary attacks)
+		Key Reuse (avoided with forward secrecy)
+		Entropy
+		Computational overhead
+		Resource vs security constraints
+
+- Public Key Infrastructure (PKI)
+	Global scalabe secure way to distribute, verify, and revoke public keys using a web of trust
+	PKI is an extensible trusted third-party architecture
+	
+	Registering and issuing certificates by a Certificate Authority, automated or manual
+	CA is central trusted introducer
+		Stores issues, and signes certificates
+		Everyone has public key of CA
+		CA has public key of customers (encrypted with their private key)
+		CSR = certificate signing request
+		No higher authority, so they sign their own certificates, but those keys are SUPER secure
+		
+- Types of Certificates
+	X.509v3
+		Standard for web domains
+	
+		Version number
+		Serial number - used later to revoke a certificate if need be
+		Signature algorithm ID
+		Issuer name
+		Validity period
+			Not before
+			Not after
+		Subject name
+		Public key alg
+		Subject public key
+		Issuer UID
+		Subject UID
+		Extensions (i.e. PKI extensions)
+		Certificate signature alg
+		Certificate signature
+		
+		Certificate extensions
+			DER
+				form of binary encoding, definitive length
+			CER
+				binary, indefinite length
+			PEM
+				Base64 encoded DER
+			PFX
+			PKCS12
+				Standard for exchanging objects
+			PKCS7
+				Standard for signing and encrypting
+			Wildcard
+				Used with multiple subdomains
+			Subject Alternate Name
+			Code Signing
+			
+	Self-signed certificates
+	Machine/computer certificates
+	
+- Core PKI Concepts
+	CA Trust Models
+		Single CA - responsibls for providing to everyone
+			Must always be online
+		Hierarchical - combination of root and intermediate
+			Root provides to intermediate
+	
+	Certificate Chaining
+		CA must be in trusted store
+		Not possible to include all CAs
+		Chain of trust
+	
+	Certificate Revocation/Suspension
+		All keys must have finite life
+		Certificate can be revoked (permanent) or suspended (temp)
+		Extension fields critical for security and functionality
+	
+	CRL
+		List of certificate serial numbers that are no longer valid or have been revoked
+		Issued by CA who issued cert
+	
+	OCSP
+		List of certs that are not valid, based on serial number
+		Generated and published immediately
+	
+	Certificate stapling
+		Client does not contact CA, certificate itself contains a time-stamped OCSP response
+	
+	Certificate Pinning
+		Manual allow list of digital certs

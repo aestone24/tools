@@ -1,0 +1,60 @@
+Risk management, Privacy, and Sensitive Data Management
+
+- Risk Types
+	Structured - planned, organized, persistent, multi-phased
+	Unstructured - accidental, non-malicious, drive-bys
+	Multiparty risk - organizations that operate with outsourcing
+
+- Risk Management Strategies
+	Risk acceptance
+	Risk avoidance
+	Risk transference/sharing
+	Risk mitigation
+
+- Risk Analysis
+	Inherent risk - risk without safeguards
+	Residual risk - risk after safeguards
+	Risk Register (or ledger/log) - repository of risk, cause, impact, scenarios, and responses
+
+- Disaster Types and Classifications
+	Environmental
+	Man-made intentional
+	Man-made unintentional
+
+- Business Impact Analysis
+	Identify critical functions and risks related to it
+
+- Privacy Breach Consequences
+	Loss of credit
+
+- Data Type Classification
+	Standard Military and Commercial Classifications
+		Military
+			Top Secret
+			Secret
+			SBU
+			Confidential
+			Unclassified
+		Commercial
+			Corporate confidential
+			Personal confidential
+			Trade secret/proprietary
+			Private
+			Public
+
+- Data Security Roles
+	Chief Privacy Officer (or CTO)
+	Owner (of information)
+	Steward - manager of data
+	Custodian - keeper of information
+	Processors
+
+- Privacy Enhancing Technologies
+	Tokenization - removes directly identifying elements with randomized tokens
+	Masking and Anonymization (AKA redacting)
+
+- Additional Concepts
+	Information life cycle
+	Impact assessment
+	Terms of agreement
+	Privacy notices

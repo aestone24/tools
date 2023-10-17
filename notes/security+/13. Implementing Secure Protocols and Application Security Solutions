@@ -1,0 +1,119 @@
+Implementing Secure Protocols and Application Security Solutions
+
+- Types of Secure Protocols
+	S at the end of an acronym typically indicates it's the same protocol just over SSL/TLS
+	S at the start typically indicates use of Secure Shell
+
+	DNSSEC - a secure version of DNS, using digital signing with public key cryptography
+		Adds a few record types
+			RRSIG - containg crypto signature
+			DNSKEY - contains a public signing key
+			DS - contains the hash of a DNSKEY record
+			NSEC and NSEC3 - for explicit denial-of-existence of a DNS record
+			CDNSKEY and CDS - for a child zone requesting updates to DS records in the parent zone
+		
+		Helps automatic verification that records are valid/haven't bee orrupted by an MitM
+	
+	Secure Shell - SSH
+		Use instead of Telnet, and v2 over v1 whenever possible
+		SSH2 uses diffie-helman for key exchange
+		SSH1.99 means SSH2 with backwards compatibility
+	
+	S/MIME
+		Secure/Multipurpose Internet Mail Exchanger
+		SMTP not natively secure
+		S/MIME standard for email message security
+		Digital signatures and email message encryption
+	
+	Secure RTP (Real-Time Transport Protocol)
+		Provides encryption, integrity, etc.
+	
+	LDAPS
+		LDAP over SSL/TLS, on port 636
+	
+	FTPS
+		FTP over SSL/TLS
+		Typically server-to-server
+	
+	SFTP
+		FTP through a secure SSH2 channel
+		Platform-independent
+	
+	SNMPv3
+		Can be configured in three modes
+			noAuthNoPriv
+			AuthNoPriv
+			AuthPriv
+	
+	SSL/TLS Steps
+		Site public key retrieved
+		public key used to encrypt private symmetrical session shared-secret key
+		session key sent to site to be decrypted with site private key
+		session key used to encrypt-decrypt for session
+	
+	POPS and IMAPS also run over SSL/TLS
+	
+- Features of IPsec
+	Offers security to traffic crossing untrusted networks between two or more trusted devices
+	
+	Two types of VPNs; site-to-site and remote-access
+	
+	IPsec has five security functions
+		Confidentiality
+		Integrity
+		Origin authentication
+		Anti-replay protection
+		Key management
+
+- Types of Use Cases
+	Voice and Video security
+	Time synchronization
+	Digitally signed API calls
+	Routing and switching
+	
+	Remote access security
+	DNS
+	Email, web, and internet file transfer
+	
+- Endpoint Protection
+	Acceptible Use Policy
+		Most important aspect of written security policy
+	Physical Security Controls
+		i.e. biometrics, MFA, disabling peripherals, etc.
+	Follow web browser best practices
+	Train against phishing
+	Use EDRs to detect and investicate IoCs
+		Filtering, advanced blocking, incident response, and multi-threat protection
+
+- Boot Integrity
+	UEFI can restrict people from booting, booting from removable devices, changing settings, or booting other OSs
+	Other terms for boot integrity include measured boot and boot attestation
+	
+- Database Security
+	Tokenization - sending sensitive data through an API key to a provider that replaces the data with non-sensitve placeholders called tokens
+	Hashing - transforms a string of characters into a fixed-length value or key
+	Salting - a value appended to a password to create a different hash - protects against brute force attacks
+
+- Application Security
+	Secure Coding practices must be implemented
+		Validate input
+		Errors should be captured
+		Normalization - ensure there is no data redundancy and store similar items together
+	Cookie integrity and HSTS are important to stop cookie manipulation attacks
+	Secure against XSS, buffer overflows sql injection, path traversal, and request forgery
+	Use whitelisting and blacklisting
+
+- Hardening Targets
+	Reducing the attack surface
+	Can be done by using vulnerability scanning and then removing the revealed surfaces
+	Patch management is very important
+
+- Advance Application Security Techniques
+	Hardware root of trust
+		Anchoring trustworthiness to hardware instead of software
+		Boot integrity through a tamper-resistant security chip, providing integrity, authentication, and privacy
+	SED - self-encrypting drives
+		All contents encrypted always, including keys, decrypting only as read
+	OPAL
+		TCCG Opal is a group of specifications for SEDs
+		Defines hierarchy of security

@@ -1,0 +1,79 @@
+Organizational Security Assessment Tools and Mitigation Controls
+
+- Network Reconnaissance and Discovery
+	Ping - Echo request to IP or domain name
+	Tracert/pathping - pings with low and slowly increasing TTL so wherever they die they send information back
+	nslookup - ask your dns to resolve a domain name to a non-authoritative IPv4 address
+	DNSenum - locates all DNS servers and entries for an organization, helps gather critical information like host names, IPs, user names
+	ipconfig/ifconfig - pulls up all the local network information
+	netstat (-a) - gets all of you tcp/udp information
+	arp - looks at the arp cache and gives you the resolutions between MAC and IP and tells you static/dynamic
+	route - shows you the route tables
+	hping - packet assembler and network analysis with an additional traceroute mode
+	netcat - swiss army knife, network debugging/exploration tool
+	curl - facilitates data transfers (like for internet)
+	theHarvester - OSINT tool that pulls emails, subdomains, hosts, employee names, open ports, banners
+	Cuckoo Sandbox - open source malware analysis system, used inside a sandbox
+	nmap - network mapping utility, finds what hosts are runing, what services are on those hosts, OS, types of packets, etc.
+	Nessus - vulnerability scanner
+	sn1per - vulnerability and penetration scanning utility
+
+- Packet capture and Replay Tools
+	tcpreplay - open source tools for modifying and reiterating already captured traffic
+	tcpdump - outputs explanation of contents of IP packets
+	wireshark (formerly ethereal) - open source packet snifffer for network troubleshooting
+
+- File manipulation tools
+	head - prints first n lines of data
+	tail - prints last ten lines from file
+	cat - concatenate files and display output
+	grep - search for regular expressions
+	chmod - change access permissions
+	logger - adds log files to var/log/syslog from command line, scripts, etc.
+
+- Shell and Sccript Environments
+	SSH with PuTTY
+	PowerShell
+	OpenSSL - commercial-grade toolkit for SSL and TLS protocols, but open source. Free under some basic license conditions
+
+- Forensic Tools
+	dd - writing disk image files to removable storage; bootable usb stick from ISO files
+	memdump - extracts files from memory dumps. Performs automated signature-based searching inside memory dump
+	FTK Imager - data preview/imaging, creates forensic images, uses write-blocking methods
+	WinHex - hexadecimal editor
+	
+- Exploitation Kits and Password Crackers
+	Kits - used by pentesters and malicious actors to find vulns and attack vectors
+		Can prioritize vulnerabilities and threats
+	
+	Password Crackers
+		Repeated attempts to identify a user account, password, or both
+		Can run against stored hashes or offline, in addition to online
+		Rainbow table
+			Hash function used for storing important data
+			Sensitive data often hashed multiple times
+			Often also uses salts
+		
+		Eg
+			Cain
+			John the Ripper
+
+- Endpoint Security Solution Reconfiguration Methods
+	What are you whitelisting?
+	What are you blacklisting?
+	Quarantine and remediation?
+
+- Configuration Changes for Mitigation
+	Firewall rules and WAF WebACLs
+	Mobile device managment
+	URL and content filtering
+	Data loss prevention
+	Revoking and updating certificates
+	
+- Isolation, Containment, Segmentation
+	Can isolate using VLANs, allowing communication upstream to switches, etc. but not to each other
+	Using this method, any malware, viruses cannot theoretically spread out of its VLAN
+	
+- Secure Orchestration, Automation, and Response (SOAR)
+	Collection fo data and alerts from various sources
+	SOAR runbooks provide a series of instructions

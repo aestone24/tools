@@ -1,0 +1,47 @@
+Monitoring, Visibility, and Reporting
+
+- Windows Logging and Monitoring
+	Event Viewer
+		System Log
+	Process Hacker - Task manager on steroids
+	Secure Configuration Assessment
+	Automate Monitoring with PowerShell
+	
+	Third Party
+		Solarwinds
+
+- Linux Logging and Monitoring
+	syslog-ng
+	syslogd
+	logrotate
+	Auditd
+	ls -l
+	netstat
+	ps -ef
+	top - processor activity
+	
+- Protocol Analyzer Output
+	
+
+- Cloud Computing Logging and Reporting
+	CloudWatch and CloudTrail
+	VPC Flow Logs
+	AWS Config
+	Systems Manager
+	GuardDuty
+
+- Log Aggregation and Collection
+	SNMP traps
+	NetFlow collection
+	Next-Gen IPS
+	Database activity monitors
+	VPN Gateway flow logs
+	Next-gen syslog
+	Cloud-based visibility tools
+	ML/AI tools
+
+- Visibility and Reporting Best Practices
+	Collect reports from testing/scanning
+	Not too much information, but enough
+
+- Lessons Learned and After-action Reports
