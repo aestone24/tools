@@ -14,6 +14,23 @@ Consulting
 	Affected Hosts: (IP addresses)
 	
 	Always write reports with findings listed from highest to lowest severity
+	
+- Leading Team Meetings
+	Procedure
+		Always arrive 5 minutes early
+		Be the first person in the room
+		Greet people as the enter
+		Keep the conversation going until the manager (or top exec) enters the meeting
+		After the manager speaks, the floor is yours
+		Discuss any items that are outstanding from the manager or team members
+		Ask each team member what they've been working on
+		Discuss what you've been working on
+		Remind the team of any important action items
+		Ask the manager if they have anything to add
+		End the meeting once the manager is done
+	
+	Prep
+		Enter with a list of items that were outstanding from last meeting/discussion since
 
 - Client-site rules
 	Never change the volume of your conversation during a pentest

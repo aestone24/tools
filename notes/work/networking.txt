@@ -17,6 +17,7 @@ Networking
 	25 - SMTP (Simple Mail Transfer Protocol)
 	43 - Whois
 	53 - DNS - UDP, Domain Transfers TCP
+	67 - DHCP - UDP
 	80 - HTTP
 	88 - Kerberos
 	110 - POP3 (Email receiving protocol)
