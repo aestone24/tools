@@ -1,0 +1,156 @@
+3. Threat Actors, Intel Sources, and Vulneratbilities
+
+- Actors and Threats
+	A threat is not realized unless there is an actor or agent
+	Threats are not realized without an agent or catalyst
+	
+	Common examples
+		Human errors
+		Hostile cyber attacks
+		Data breaches and theft
+		Cognitive threats via social networking
+		Exploiting consumer electronics
+		Interference with infrastructure
+		Natural disasters or structural failures
+	
+	Advanced Persistent Threats
+		Long-term planned malware campaigns
+		Pre-planned with cost-benefit analysis
+		Persistent in activity and system state existence
+		Often nation-state actors
+	
+	Insider threats
+		Disgruntled or desparate employees with elevated privileges
+		Always consider this possibility after a breach
+		Can involve employee with fake ID or someone using "Shadow IT"
+	
+	State Actors
+		85% of vulnerability is cyber crime, 10% from cyber espionage
+		WWC involves many of the same avctivities as criminal syndicates
+	
+	Hacktivists
+		Hacker activists
+		Ex. Anonymous
+		Often divided into environmental and political categories
+	
+	Script Kiddies
+		Inexperienced crackers using script and pre-packaged viruses
+
+- Attributes of Actors
+	Internal vs External
+	Structured vs Unstructured
+		Structured
+			Planned
+			Organized
+			Persistent
+			Multi-phased
+			Internal or external
+			Exploit kits, zero-days, modules, ransomware
+		Unstructured
+			Accidental
+			Non-malicious
+			Drive-bys
+			No AUP
+			Poor awareness
+			Email/webmail
+			USBs, personal electronics
+	Intent
+	Motivation
+		Notoriety, Fame, and THEN financial, political, organized crime, rogue states
+	Sophistication levels or skillsets
+	Resources and funding
+	
+- Threat Vectors
+	Physical Access
+	Local network access
+	Remote access and encryption
+	Wireless, satellite, cellular
+
+- Threat Intelligence Sources
+	IoC
+		Network or host-based
+		Artifacts of an incursion/ddisturbance
+		A measureable event or stateful property in the cyber domain
+		Registry entreis, files on disk/in-memory
+	
+	Vulnerability Databases
+		Rapid collection and dissemination is very important
+	
+	Dark Web
+		Deep web not indexed by search engines
+		Can be reached with Tor
+		Can find sources of malware, ransomware, botnets, hacking groups, etc.
+		Also has gathering spaces for terrorists
+	
+	OSINT
+		Any data or information that can be collected legally from free, public sources
+	
+	Also
+		Automated indicator sharing (AIS)
+		Structured Threat Information Exchange (STIX)
+		Predictive analysis and threat maps
+		Trusted automated exchange of indicator information (TAXII)
+
+- Research Sources
+	Vendor web sites
+	Vulnerability feeds
+	Conferences
+	Academic journals
+	Request for Comments
+	Local industry groups
+	Social media
+	Threat feeds
+	TTPs
+	Word of Mouth
+
+- Cloud vs. On-premise Vulnerability
+	Cloud
+		Threat actors are almost always external
+		Access keys must be protected
+		Many accounts to reduce attack and blast surface
+		Managed security service providers and Cloud Access Service Brokers
+	
+	On-premise
+		Biggest threat is privileged insiders
+			C-suite or C-team
+			Databse engineers and architects
+			Privileged security personnel
+			Disgruntled employee jawns
+
+- Zero-day vulnerabilities
+	Everything was once a zero-day
+	Considered such before and on the day the vendor is made aware of the exploit's existence
+	Zero refers to the number of days since the anti-malware vendor discovered it
+	CVE is a valuable list of recently-discovered vulnerabilities
+	Threat management and modeling tools are cutting-edge countermeasures
+
+- Weak Configurations
+	Human error is the number one vulnerability, so deploy change, config, and patch management systems (automated)
+	Peer reviews are beneficial
+	Test configurations in virtual labs or private clouds
+	Don't be the first to try a new product
+	
+	Upgrade to stronger encryption
+	Harden your systems
+	Use security mechanisms even if you have to use unsecure application protocols
+	DO NOT USE DEFAULT PASSWORDS
+	
+	Principle of Least Privilege
+
+- Third-party Risks
+	Vendor management
+	System integration (DevSecOps rather than DevOps)
+	Supply chain
+	Lack of vendor support
+	Outsourced code development
+	Data storage
+
+- Improper Patch Management
+	Most organizations are weeks or months behind
+
+- Impacts of Legacy Platforms
+	Data loss, breach, and exfiltration
+	Identity theft
+	Financial loss
+	Loss of reputation and goodwill
+	Availability loss

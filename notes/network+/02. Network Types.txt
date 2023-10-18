@@ -1,0 +1,282 @@
+Network Types
+
+- Mesh Topology
+	Rather unique
+	
+	Each computer on the network connects to all other computers
+		Point-to-point connections for all
+	
+	Advantages
+		Expand network without user disruption
+		Nodes have dedicated links
+		Fault identification is easy
+		Total network failure very unlikely
+		Multiple routes available for communication
+	
+	Disadvantages
+		Complex installation
+		More space required
+		Multiple interfaces to maintain
+		Utilization is low
+	
+	Topology Types
+		Partial Mesh
+		Full Mesh
+
+
+- Star Topology
+	By far the most common type of network
+	All computers connect using a central node
+	Popular for LANs
+	
+	Advantages
+		Only failed nodes are affected by their failure
+		Easy to modify, configure, and troubleshoot
+		Fast performance, low traffic
+	
+	Disadvantages
+		When a concentrator fails, brings down entire network (or all connected devices)
+		Central node can be more expensive
+		You can have heavy network traffic due to use of hubs - switches avoid this
+		Concentrator capacity controls performance
+	
+
+- Bus Topology
+	One single cable connects all nodes (goes through all devices)
+	Two endpoints which need to be terminated (failing to do so will bounce signals)
+	
+	Advantages
+		Lower cost
+		Used for small or temporary networks
+		Easy
+		
+	Disadvantages
+		System may crash from cable fails
+		Heavy traffic impacts performance
+		Heavy traffic causes collisions
+		Limited length cables
+	
+	Nobody even ever uses these. Never make one.
+
+
+- Ring Topology
+	Each device communicates with two neighbor devices
+	Setup is in a... well, a ring.
+	Only ever receive from one device, send to the other
+	Like a bus but a closed loop
+	
+	Advantages
+		Easy to install and reconfigure
+		Device addition/deletion is easy
+		Equal access to all network computers
+		
+	Disadvantages
+		Unidirectional traffic
+		Entire network can be taken down by one break
+		Unpopular
+		Topology signals always circulating - high power usage
+		Difficult to troubleshoot
+		Computer addition or removal can disturb the network
+	
+	Never make one. Never.
+	
+
+- Hybrid Topology
+	Combination of two or more other topologies
+	
+	Advantages
+		Mostly dependent on which topologies you combine
+		
+		Ease of error detection and troubleshooting (can know where an error is coming from)
+		Can be highly flexible and effective
+		Scalable
+		
+	Disadvantages
+		Complex design
+		Can be costly
+
+
+- LAN, MAN, and WAN
+	LAN
+		Connect devices to allow sharing of data and resources
+		Use private addressing schemes
+		Connected by switches
+		Very fast
+		Easy design and maintenance
+	
+	MAN
+		Covers area larger than LAN, smaller than WAN
+		Covers a "regional geographic area"
+		Common for organizations
+		Designed for high-speed connectivity of many LANs
+		Harder to design and maintain
+		
+		Less fault tolerant than a LAN
+		More network congestion
+		Costly
+		Moderate transfer rate
+		Moderate propogation delay
+		
+	WAN
+		Large geographic area
+		Supports "high speed" but nothing even close to LANs (maybe 1/10th)
+		Propogation delay is a challenge
+	
+
+- WLAN, PAN, and CAN
+	Wireless Local Area Network
+		Wireless connectivity for devices - think WiFi
+		
+		Every device is a station
+			Stations are either access points to the network (function as routers)
+			Or they are clients (Includes a variety of devices)
+			
+	Personal Area Network
+		A network specific to an individual
+		Includes various devices - laptops, phones, printers, etc.
+		Managed by a single device
+		Can be accessed by any device
+		Modem connected to internet provides wireless connections
+		
+		Technically a LAN
+		
+	Campus Area Network
+		Connects multiple buildings in a large property
+		Common for educational or corporate campuses
+		Generally connects to public internet
+		
+		Smaller than MANs and WANs
+		
+		Security Benefits
+			Usually managed by internal IT
+			Easier to apply network security policies
+			Can manage access and enable safeguards
+		
+		Effectively multiple LANs connected together and managed centrally
+		
+		Higher speed and lower cost than a MAN or WAN
+
+
+- Peer-to-peer
+	All nodes considered to be equal
+	Usually consists of only client systems
+	No dedicated servers
+	Any system can act as a server or a client at any time
+	
+	Workgroups
+		Microsoft Implementation of Peer-to-peer
+		All members configured with same workgroup name
+		Simplifies sharing of resources
+		No centralized management
+	
+- Client/Server
+	Devices have specific functions
+	Client systems make requests to servers
+	Servers perform tasks for clients
+	
+	Domains
+		Microsoft implementation of a client/server network
+		Dedicated servers manage a single directory of all users and computers
+		Client systems join domain
+		Centralized administration and management
+
+
+- Storage Area Networks
+	Dedicated and high-speed
+	
+	Created for servers to access data at the "block" level
+		Can "block off" any amount of storage for a server - could be less than a hard drive, could be multiple drives
+	
+	Storage appears local to host
+	
+	Benefits
+		Improved availability
+		Redundency
+		Enhanced performance
+		Lots of storage
+		Can just add more storage to one server instead of adding more servers
+		Better management of storage
+		Disaster recovery
+		Very easy to scale
+	
+
+- Multiprotocol Label Switching
+	Used to ensure reliable connections for real-time applicatoins
+	
+	More of a technique than a service
+	Expensive
+	
+	Compare this to tracking a package as it passes through multiple destinations on the way to you
+	
+	MPLS establishes highly efficient, pre-determined routes
+	As a packet enters the network, it gets a forwarding equivalence class (FEC)
+	All network routers have a table that specifies how specific FEC-type packets should be handled
+	Allows routers to send each packet along the optimal route - eg. using low bandwidth for recordings
+	
+	Features
+		Not bound to a tech
+		Designed to improve performance
+		Used between branch offices or enterprises using real-time apps
+	
+	MPLS Label components
+		Label value
+		Experimental - used for QOS/prioritization
+		Bottom-of-stack - Informs the last router that it's the last router
+		TTL - time-to-live - tells it how many hops to take before being discarded
+		
+	Pros
+		Scalable
+		Reduced congestion
+		Secure
+		Better bandwidth utilization
+		Not vulnerable to DoS
+	
+	Cons
+		No encryption
+		Very expensive
+		Challenging to deliver coverage globally
+		Not designed to work with cloud
+
+
+- Multipoint Generic Routing Encapsulation
+	A point-to-point tunnelling protocol
+	
+	Allows two devices to directly communicate
+	
+	Create only one tunnel interface on each router
+		Builds the rest of the tunnels automatically from one starting GRE
+	
+
+- Service-related Entry Points
+	Demarcation point - everything your side of this is your responsibility - barrier from LAN to WAN
+	Smartjack - an intelligent device that provides a demarcation point
+
+
+- Hypervisor
+	Separates OS from applications and hardware
+	Allows host to run multiple VMs as guests to maximize resource use
+	
+	Type 1 - Native or bare metal; lightweight
+	Type 2 - hosted; First, install an OS, then add a hypervisor on top of it
+
+
+- Virtual Switch
+		Application that permits communication between VMs on a network
+		Directs communication by checking packets before sending
+		Embedded in software
+		Can connect to NIC
+		VMs believe they're connected to a physical switch
+
+
+- Virtual Network Interface Card
+	Used to connect virtual machines with other nodes
+	Responsible for managing network communication
+	
+	VMs can have one or more of these
+	
+
+- Network Function Virtualization
+	Decouples network functions from hardware and runs them on software
+	Complements using software-defined networking
+	Focuses on network service optimization
+

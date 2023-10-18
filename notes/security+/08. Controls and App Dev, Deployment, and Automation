@@ -1,0 +1,76 @@
+Controls and App Dev, Deployment, and Automation
+
+- Categories of Controls
+	Managerial
+		AKA administrative
+		How you do risk assessment
+		Best practices
+		Password policies
+		Training and Awareness
+		Mandatory vacation
+	Operational
+		Change and configuration management database
+		Conducting training
+		Environmental controls
+		Contingency planning
+		System and data integrity
+	Technical
+		Security mechanisms that specific systems run
+		
+	You may also see admin, technical, and physical, but this is less correct
+
+- Types of controls
+	Preventative
+	Detective
+	Corrective
+	Deterrent
+	Compensating
+
+- Secure Application Environments
+	Secure by design - application is developed with security integrated into SDLC
+	Secure by deployment - not developed with security intgrated, but deployed into an environmeny with security integrated
+	Secure by default - design assumes that application is natively secure without any modifications
+	
+	Security should be built into development
+
+- Provisioning and Deprovisioning
+	Providing or removing software access to employees, customers, partners etc.
+	Involves autoscaling services at CSPs to take advantage of elasticity
+
+- Integrity Measurement
+	NIST SP 800-155 - BIOS
+	Checking for digitally signed code and programs
+	Using Linux IMA subsystem on linux
+	Trusted Computing Base solutions
+	Server-side vs client-side execution validation
+	
+- Secure Coding Techniques
+	Normalization
+	Obfuscation
+	Removing Dead Code
+	Memory Management - Always allocate when using, deallocate when done
+	Never expose backend data
+	Whenever you can use pre-compiled modular code/commands, do - but beware of using third-party code
+	Abstract original data
+	Employ data loss prevention
+
+- OWASP for Application Development
+	OWASP
+		Non-profit foundation with goal of software and application security improvement
+		Enhances software security by conducting community-led open source projects and hosting conferences
+		Also have a Mobile Security Testing Guide
+		
+		Check out OWASP Top 10
+
+- Software Diversity
+	Two or more functionally duplicate versions of the app developed from same specification
+	Goal: detect and fix bugs better - more people not likely to all make the same mistake
+	
+	Note that programming errors in low-level code are often exploitable
+
+- Automation and Scripting
+	Continuous monitoring
+	Continuous valiation
+	Continuous integration
+	Continuous delivery
+	Dontinuous deployment

@@ -1,0 +1,159 @@
+Registered Ports
+
+- SQL Server
+	TCP port 1433
+		This will always be recognized as a SQL server
+	
+	Relational Database Management System
+		Basis for modern databases
+		Uses tables
+		Tables use fields
+		Individual entries known as records
+		Supported by SQL
+	
+	SQL Actions
+		Queries
+		Insert new records
+		Update records
+		Delete records
+		Set permissions
+		
+	Database Engine
+		Relational engine - maintains connectivity between tables
+		Storage engine - Stores data (on HDD)
+	
+	SQLOS
+		Provides OS services to a database
+	
+	SQL Server Services and Tools
+		Data management tools (data integration services, data quality services)
+		Business Intelligence - examines and analyzes stored data
+
+- SQLnet
+	TCP port 1521 is default/registered (can be configured otherwise but it's a pain)
+	
+	Implemented by Oracle, networking software, happens to use SQL language
+	Scalable, supports most protocols, media/topology support, network transparency, heterogeneous networking
+	
+	Configuration
+		Needs to be on client and server (for port agreement) - already taken care of if using default port
+		Files
+			sqlnet.ora - tracing, encryption
+			tnsnames.ora
+			ldap.ora - ldap
+			listener.ora - configure database listeners
+			cman.ora - settings for connection
+
+- MySQL Database Service
+	TCP Port 3306
+	
+	Still SQL database management, but this is open source, technical support from Oracle
+		
+	Software to connect is also open source
+	Free, but commercial licenses from Oracle are an option
+	
+	Compatible with most client/server systems (SQLServer or SQLnet)
+	Compatible with embedded systems (mobile devices, eg.)
+	
+	Secure privilege and password system, encrypted
+	
+	Very scalable, but limited to 64 indexes per table (still pretty high)
+	
+	Clients and tools
+		mysqldump
+		mysqladmin
+		MySQL workbench
+	
+	Client connections
+		Any platform with TCP/IP
+		Can also use named pipes (Windows) or Unix domain socket files
+		
+- Remote Desktop Protocol
+	Port 3389 for TCP and UDP
+	
+	Means for remote management and access
+		Easier to maintain applications this way
+	
+	Most versions of Windows have this by default
+	Versions have been made for Apple macOS and open source
+	
+	Protocol
+		Establishes dedicated network channel for exchanging information
+		All data encrypted during session
+		From all software perspectives, same as being at the system
+	
+	Properties
+		Supports TLS and bandwidth reduction
+		Smart card authentication
+		Offers printer redirection (print from remote to local, or local to remote)
+		128-bit encryption
+	
+	RDP Advantages
+		Security
+		Low cost
+		Flexible
+	
+	Disadvantages
+		Requires admins with knowledge of the technology
+		If multiple servers on one public IP, will need to configure traffic to different ports to reroute to different servers
+		There may be bottlenecks
+		Requires reliable internet connections
+		Possible downtime
+		
+- Session Initiation Protocol (SIP)
+	
+	
+	Used for video, voice, and IM realtime communications
+	
+	Session Attributes
+		User capabilities
+		Setup
+		Management
+		User availability
+		User location
+	
+	Request/response protocol (like HTTP)
+	Carries messages
+	
+	Requests
+		Invite
+		Bye (ends the communication)
+		Update
+		Ack
+		Cancel (stops any pending request)
+		
+- Common IP Protocol Types
+	TCP - covered in detail elsewhere
+		Used for data transmission, involves acknowledgment
+	
+	User Datagram Protocol - UDP - no acknowledgment
+	
+	Internet Control Message Protocol (ICMP)
+		Network layer protocol
+		Supporting protocol
+		Error message standard
+		Provides feedback on communication
+		Pinging a router uses this
+
+- Generic Routing Encapsulation (GRE)
+	Tunneling protocol developed by Cisco Systems
+	Encapsulates various network layer protocols
+
+- IP Security (IPsec)
+	Provides authentication, integrity, and confidentiality to a network
+	Applied by encapsulating security payload (ESP) and authentication header (AH)
+	
+- Packet Switched Networks
+	Connection-oriented protocols
+		Used by endpoint devices to transmit devices
+		Reliable service network
+		TCP, for example
+		
+		Benefits
+			Less error prone
+			More reliable
+			Data arrives in correct order
+	
+	Connectionless Protocols
+		Communication without any prior arrangement
+		UDP, for example

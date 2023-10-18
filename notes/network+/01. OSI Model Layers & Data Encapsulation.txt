@@ -1,0 +1,285 @@
+OSI Model Layers & Data Encapsulation
+
+- The Open Systems Interconnection (OSI) Model
+	Describes functions of a networking system
+	Characterizes computing functions
+	
+	Consists of 7 layers
+	Each layer on each device will only ever communicate with the same layer on another device
+	
+- OSI Layer 1 - Physical
+	Responsible for transmition of digital data bits from source to target
+	Components
+		Cables
+		Connectors
+		Network Interface Cards
+		Repeaters
+		Hubs
+	There is technically nothing involving coding at this level
+	
+	Encoding and Signalling
+		Transforms data from bits to signals
+		Signals are then sent over a network
+	
+	Bits transferred from data link layer, transformed into electrical impulses, transmitted, decoded into bits on target machine, transferred to targets data link layer
+	
+	Hubs exist at this layer
+	
+- OSI Layer 2 - Data Link
+	Responsible for node-to-node data delivery
+	Receives data from network layer and passes to the physical layer
+	It creates frames and adds physical addresses
+	
+	Responsibilities
+		Physical addressing
+		Framing
+			Defines correct structure
+		Access control
+		Flow control
+		Error control
+	
+	Transmission Control
+		Establishing and terminating links
+		Media access management
+		Flow control
+			Stops fast senders from overwhelming slow receivers
+		Error control
+			Figures out what to do in the case of lost or damaged transmissions
+		Access control
+			Specifies which node has control over the medium
+	
+	Logical Link Control
+		Media access methods
+		Network layer protocols
+		Determines if the communication is connectionless or connection-oriented
+		Connectionless - like a speech
+		Connection-oriented - like a conversation between two people
+	
+	Medium Access Control (MAC)
+		For connection to physical media
+		Home of the MAC Address
+	
+	Switches exist at this layer
+	
+- OSI Layer 3 - Network
+	Most of what needs to happen for communication occurs at this layer
+	
+	Receives data from the transport layer, passes it to the data link layer
+	
+	Processes
+		Packet Addressing
+		Address conversion
+			Address at this level is called a logical address
+			Consider this like a phone number - it can be changed for the device, but it will still route to here
+		Source-to-destination delivery
+		Routing - allows source and destination to be in separate networks
+	
+	Routers are required to connect any two independent networks - including the internet
+	
+	Internetworking
+		Provides logical connections between different types of networks
+		Combines various networks to form a larger network
+	
+	Logical Addressing
+		Define addressing scheme
+		Combine any number of networks
+		
+	Packetizing
+		Packets are created by encapsulation
+		IP applies source and destination addresses to each packet
+	
+	Fragmentation
+		Dividing larger packets into smaller fragments
+		Fragments can then be easily sent out
+	
+
+- OSI Layer 4 - Transport
+	Accepts data from session layer, passes to network
+	
+	End-to-end message delivery
+		It knows the address and contains values to differentiate programs from each other (ports)
+		Transport layer adds ports
+	
+	Transport Functions
+		Message acknowledgement and traffic control
+		Session multiplexing
+			Can combine multiple sessions/streams into one
+		Service point addressing
+			Applies ports
+	
+	Data Delivery
+		User Datagram Protocol (UDP)
+			Like ordering something, you don't care what path it takes, and it's up to you to claim it
+		Transmission Control Protocol (TCP)
+			Like registering something and requiring a signature
+	
+	Connectionless Transmission - UDP
+		Receiver does not acknowledge receipt
+		Sending device assumes packet arrived successfully
+		Enables faster communicaiton
+	
+	Connection-oriented Transmission - TCP
+		Requires acknowledgement of receipt
+		Steps
+			Data Transfer ->
+			Ack ->
+			Syn/Ack <-
+			Syn ->
+			
+- OSI Layer 5 - Session
+	Responsible for beginning, maintenance, and ending of communication between devices
+	
+	Defines parameters for connections and manages transfer of data
+	
+	Acts like the moderator of a conversation
+	
+	Functions
+		Session establishment, maintenance, termination
+		Session support
+			Security
+			Name recognition
+			Login
+	
+	Dialog Control
+		Deermines which deice communicates first and how data will be sent
+		Types of dialog control
+			Simplex - one device transmits, one receives
+			Half duplex - communicate both ways, but only one way at a time
+			Full duplex - Full communication both ways at all times
+	
+	Protocols
+		NetBIOS
+		DNS
+		RPC
+		NFS
+	
+
+- OSI Layer 6 - Presentation
+	Responsible for presenting data in a uniform format to the application
+	
+	Also referred to as the translation layer
+	
+	Formats data in an understandable way
+	
+	Functions
+		Character code translation
+			Translates characters we use into binary and vice versa
+			Typically uses ASCII or EBCDIC
+		Data conversion
+			Bit Order
+			Carriage return/line feed
+			Integer and floating point
+			
+	Data Compression
+		Reduces the number of bits transmitted
+		Ex. Token conversion - replace redundent strings with something shorter
+	
+	Data Encryption
+		Scrambling data in an unscramblable way provided a key is held
+	
+
+- OSI Layer 7 - Application
+	The collection of protocols required to support the functionality of an application
+	
+	Common examples include SMTP or HTTP
+	
+	Network Services
+		FTP
+		DHCP
+		DNS
+		SMTP
+		HTTP
+	
+	Functions
+		Allows users to interact with applications
+			Accepts user input and passes to lower layers
+			Easier application compatibility and implementation
+			Applications don't need to be re-written for different types of network environments
+		
+	Application Examples
+		Mail services - SMTP, eg.
+		File transfer, access, and management
+		
+
+- Ethernet/IP Headers
+	OSI Layers
+		Ethernet - Layer 2
+		IP Header - Layer 3
+		TCP/UDP - Layer 4
+		
+	Ethernet Frame Format
+		Preamble - 7 bytes
+		SFD (Start of Frame Delimiter) - 1 byte
+		Destination Address (MAC) - 6 bytes
+		Source Address (MAC) - 6 bytes
+		Length - 2 bytes
+		Data - 46-1500 bytes
+		CRC (Used to check if data has been corrupted) - 4 bytes
+	
+	Extended Ethernet Frame (Ethernet II)
+		DA - 6
+		SA - 6
+		Type - 2
+		DSAP - 1
+		SSAP - 1
+		Ctrl - 1
+		Data - >46
+		FCS - 4
+	
+	IPV4 Header
+		Basically, uses the IP Address
+	
+	TCP Header
+		Minimum size of 20, maximum of 60 bytes
+		Defines the port value
+	
+	UDP Header
+		Source port (2)
+		Destination port (2)
+		Length (2)
+		Checksum (2)
+		Data (0 to 65507 bytes)
+	
+
+- TCP Flags
+	Synchronization (SYN)
+		Used in establishment of the connection
+		Three-way handshake
+		Steps
+			I would like to send
+			I'm ready to receive
+			Okay let's begin
+	
+	Acknowledgement (ACK)
+		Used to acknowledge receipt of a package
+	
+	Finish (FIN)
+		Used to request connection termination
+		Last packet sent by sender
+	
+	Reset (RST)
+		Also used for termination, but when one sender decides something is wrong
+	
+	Push (PSH)
+		Waiting for more data from upper layers
+	
+	Urgent (URG)
+		Data is forwarded immediately
+		Notifies to prioritize over other packets
+		Receiver is notified once all urgent packets are received
+	
+
+- Payloads
+	Actual data that's being transmitted
+	Created at data link layer frame
+
+- MTU vs MSS
+	Maximum Transmission Unit (MTU)
+		The largest packet that can be sent
+		Specified at Layer 3 (Network)
+	
+	Maximum Segment Size (MSS)
+		Largest amount of data a device can handle
+		Data segment and header total size should be less than MTU size
+
+
